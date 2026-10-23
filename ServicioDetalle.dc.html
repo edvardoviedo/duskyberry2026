@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="display:block">
+  <section style="background:#000000;color:#F1F1F1;padding:clamp(40px,6vw,96px) 0 clamp(64px,8vw,120px)">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:28px">
+      <nav aria-label="Ruta de navegación" style="font-family:Poppins, sans-serif;font-size:13px;color:#8A90A0;display:flex;flex-wrap:wrap;gap:8px"><a href="Inicio.dc.html" style="color:#AEB3C0;text-decoration:none">Inicio</a><span aria-hidden="true">/</span><a href="Servicios.dc.html" style="color:#AEB3C0;text-decoration:none">Servicios</a><span aria-hidden="true">/</span><span aria-current="page">{{ s.name }}</span></nav>
+      <p style="margin:0;display:flex;align-items:center;gap:12px;font-family:Poppins, sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#85A840"><span style="width:8px;height:8px;border-radius:50%;background:#0CC0DF"></span><span>{{ s.eyebrow }}</span></p>
+      <sc-if value="{{ bold }}" hint-placeholder-val="{{ true }}">
+        <h1 style="margin:0;max-width:1100px;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(40px,6.4vw,96px);line-height:.98;letter-spacing:-0.045em;text-wrap:balance">{{ s.title }}</h1>
+      </sc-if>
+      <sc-if value="{{ italic }}" hint-placeholder-val="{{ false }}">
+        <h1 style="margin:0;max-width:1100px;font-family:Montserrat, sans-serif;font-weight:300;font-size:clamp(40px,6vw,88px);line-height:1.02;letter-spacing:-0.035em;text-wrap:balance">{{ s.title }}</h1>
+      </sc-if>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end;padding-top:12px">
+        <p style="margin:0;font-family:Poppins, sans-serif;font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:#B8BCC8;max-width:600px;text-wrap:pretty">{{ s.lead }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="{{ quoteHref }}" style="display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 28px;border-radius:999px;background:#85A840;color:#000000;font-family:Poppins, sans-serif;font-size:16px;font-weight:600;text-decoration:none" style-hover="background:#9BBF52;color:#000000">Solicita una cotización</a>
+          <a href="{{ secHref }}" target="{{ secTarget }}" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:56px;padding:0 24px;border-radius:999px;border:1px solid rgba(241,241,241,.28);color:#F1F1F1;font-family:Poppins, sans-serif;font-size:16px;font-weight:500;text-decoration:none" style-hover="border-color:#F1F1F1;color:#F1F1F1">{{ secLabel }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F1F1F1;color:#000000;padding:clamp(72px,10vw,140px) 0">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px clamp(40px,6vw,96px)">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <p style="margin:0;font-family:Poppins, sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#4A6420">Qué hacemos</p>
+        <p style="margin:0;font-family:Montserrat, sans-serif;font-weight:500;font-size:clamp(20px,2vw,26px);line-height:1.45;letter-spacing:-0.01em;color:#000000;text-wrap:pretty">{{ s.intro }}</p>
+      </div>
+      <ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:0 24px;align-content:start">
+        <sc-for list="{{ s.includes }}" as="i" hint-placeholder-count="8">
+          <li style="display:flex;gap:12px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.12);font-family:Poppins, sans-serif;font-size:16px;color:#1A1D26"><span style="width:6px;height:6px;border-radius:50%;background:#85A840;flex-shrink:0;transform:translateY(-2px)"></span>{{ i }}</li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <section style="background:#000000;color:#F1F1F1;padding:clamp(72px,10vw,140px) 0">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:56px clamp(40px,6vw,96px)">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <p style="margin:0;font-family:Poppins, sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#85A840">Para quién es</p>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0">
+          <sc-for list="{{ s.forWho }}" as="w" hint-placeholder-count="4">
+            <li style="padding:16px 0;border-bottom:1px solid rgba(241,241,241,.1);font-family:Montserrat, sans-serif;font-weight:700;font-size:clamp(18px,1.8vw,22px);line-height:1.3;letter-spacing:-0.015em">{{ w }}</li>
+          </sc-for>
+        </ul>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <p style="margin:0;font-family:Poppins, sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#0CC0DF">Problemas que ayuda a resolver</p>
+        <div style="display:flex;flex-direction:column;gap:28px">
+          <sc-for list="{{ s.problems }}" as="p" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h3 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-0.02em">“{{ p.t }}”</h3>
+              <p style="margin:0;font-family:Poppins, sans-serif;font-size:15px;line-height:1.6;color:#AEB3C0">{{ p.d }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showExamples }}" hint-placeholder-val="{{ true }}"><section id="ejemplos" style="background:#1E222E;color:#F1F1F1;padding:clamp(72px,10vw,140px) 0;scroll-margin-top:72px">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:40px">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px">
+        <h2 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(32px,4.6vw,60px);line-height:1.02;letter-spacing:-0.04em">Ejemplos visuales</h2>
+        <span style="font-family:ui-monospace, Menlo, monospace;font-size:12px;color:#AEB3C0">{{ s.exNote }}</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px;align-items:start">
+        <sc-for list="{{ s.examples }}" as="e" hint-placeholder-count="3">
+          <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+            <sc-if value="{{ e.phone }}" hint-placeholder-val="{{ false }}">
+              <div style="position:relative;width:100%;max-width:290px;margin:0 auto;aspect-ratio:9 / 19.5;border-radius:15% / 7%;padding:3.2%;box-sizing:border-box;background:linear-gradient(150deg,#55585f 0%,#1d1f23 38%,#2c2f34 70%,#4a4d53 100%);box-shadow:0 50px 90px -40px rgba(0,0,0,.95), inset 0 0 0 1.5px rgba(255,255,255,.14)">
+                <span aria-hidden="true" style="position:absolute;left:-1.1%;top:20%;width:1.4%;height:5%;border-radius:2px;background:#3a3d43"></span>
+                <span aria-hidden="true" style="position:absolute;left:-1.1%;top:28%;width:1.4%;height:9%;border-radius:2px;background:#3a3d43"></span>
+                <span aria-hidden="true" style="position:absolute;right:-1.1%;top:26%;width:1.4%;height:12%;border-radius:2px;background:#3a3d43"></span>
+                <div style="position:relative;width:100%;height:100%;border-radius:12.5% / 5.8%;overflow:hidden;background:#000000">
+                  <img src="{{ e.phone }}" alt="{{ e.alt }}" width="736" height="1224" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block">
+                  <span aria-hidden="true" style="position:absolute;top:2.3%;left:50%;transform:translateX(-50%);width:31%;height:3.6%;border-radius:999px;background:#000000"></span>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ e.img }}" hint-placeholder-val="{{ false }}">
+              <img src="{{ e.img }}" alt="{{ e.alt }}" width="1080" height="1350" loading="lazy" style="width:100%;height:auto;aspect-ratio:4 / 5;object-fit:cover;display:block;border-radius:6px;background:#1E222E">
+            </sc-if>
+            <sc-if value="{{ e.comp }}" hint-placeholder-val="{{ true }}">
+              <div role="img" aria-label="{{ e.alt }}" style="position:relative;aspect-ratio:{{ e.ratio }};background:{{ e.bg }};color:{{ e.fg }};border-radius:6px;padding:22px;box-sizing:border-box;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(241,241,241,.06)">
+                <span style="position:relative;z-index:1;font-family:Poppins, sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase">{{ e.kicker }}</span>
+                <span style="position:relative;z-index:1;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(24px,2.4vw,32px);line-height:.98;letter-spacing:-0.04em;max-width:86%;text-wrap:balance">{{ e.big }}</span>
+                <span style="position:absolute;right:-14%;bottom:-14%;width:46%;aspect-ratio:1;border-radius:50%;background:{{ e.accent }}"></span>
+              </div>
+            </sc-if>
+            <figcaption style="font-family:Poppins, sans-serif;font-size:14px;color:#C9CDD6;text-align:{{ e.capAlign }}">{{ e.cap }}</figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section></sc-if>
+
+  <section style="background:#F1F1F1;color:#000000;padding:clamp(72px,10vw,140px) 0">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:56px clamp(40px,6vw,96px)">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h2 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.05;letter-spacing:-0.035em">{{ s.delivTitle }}</h2>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+          <sc-for list="{{ s.deliverables }}" as="d" hint-placeholder-count="3">
+            <li style="display:flex;gap:12px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.12);font-family:Poppins, sans-serif;font-size:16px;line-height:1.55;color:#1A1D26"><span style="width:6px;height:6px;border-radius:50%;background:#85A840;flex-shrink:0;transform:translateY(-2px)"></span>{{ d }}</li>
+          </sc-for>
+        </ul>
+        <p style="margin:0;font-family:Poppins, sans-serif;font-size:14px;line-height:1.6;color:#3A3F4D">{{ s.note }}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h2 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.05;letter-spacing:-0.035em">Lo que necesitamos de ti</h2>
+        <ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+          <sc-for list="{{ needs }}" as="n" hint-placeholder-count="5">
+            <li style="display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.12);font-family:Poppins, sans-serif;font-size:16px;line-height:1.55;color:#1A1D26"><span style="font-family:Montserrat, sans-serif;font-weight:800;font-size:14px;color:#4A6420;flex-shrink:0">{{ n.n }}</span>{{ n.t }}</li>
+          </sc-for>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#000000;color:#F1F1F1;padding:clamp(72px,10vw,140px) 0">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:40px">
+      <h2 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(32px,4.6vw,60px);line-height:1.02;letter-spacing:-0.04em">Cómo trabajamos</h2>
+      <ol style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:0">
+        <sc-for list="{{ process }}" as="p" hint-placeholder-count="4">
+          <li style="display:flex;flex-direction:column;gap:14px;padding:28px 24px 28px 0;border-top:2px solid {{ p.bar }}">
+            <span style="font-family:Montserrat, sans-serif;font-weight:800;font-size:14px;color:#85A840">{{ p.n }}</span>
+            <h3 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.03em">{{ p.t }}</h3>
+            <p style="margin:0;font-family:Poppins, sans-serif;font-size:15px;line-height:1.6;color:#AEB3C0">{{ p.d }}</p>
+          </li>
+        </sc-for>
+      </ol>
+      <p style="margin:0;font-family:Poppins, sans-serif;font-size:14px;color:#8A90A0">El alcance, las revisiones, los formatos y los plazos se establecen en cada cotización.</p>
+    </div>
+  </section>
+
+  <section style="background:#000000;color:#F1F1F1;padding:0 0 clamp(72px,10vw,140px)">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px clamp(40px,6vw,96px);border-top:1px solid rgba(241,241,241,.1);padding-top:clamp(56px,7vw,96px)">
+      <h2 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(32px,4.6vw,60px);line-height:1.02;letter-spacing:-0.04em">Preguntas frecuentes</h2>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ s.faq }}" as="q" hint-placeholder-count="4">
+          <details style="border-bottom:1px solid rgba(241,241,241,.12)">
+            <summary style="list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:64px;padding:12px 0;font-family:Montserrat, sans-serif;font-weight:700;font-size:18px;line-height:1.3;letter-spacing:-0.01em"><span>{{ q.q }}</span><span aria-hidden="true" style="font-family:Poppins, sans-serif;font-weight:400;font-size:24px;color:#85A840;flex-shrink:0">+</span></summary>
+            <p style="margin:0 0 20px;font-family:Poppins, sans-serif;font-size:16px;line-height:1.65;color:#B8BCC8;max-width:640px">{{ q.a }}</p>
+          </details>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#85A840;color:#000000;padding:clamp(72px,10vw,140px) 0">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:32px">
+      <h2 style="margin:0;max-width:1000px;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(36px,5.6vw,84px);line-height:.98;letter-spacing:-0.045em;text-wrap:balance">{{ s.ctaTitle }}</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="{{ quoteHref }}" style="display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 28px;border-radius:999px;background:#000000;color:#F1F1F1;font-family:Poppins, sans-serif;font-size:16px;font-weight:600;text-decoration:none" style-hover="color:#F1F1F1;background:#1E222E">Solicita una cotización</a>
+        <a href="Servicios.dc.html" style="display:inline-flex;align-items:center;min-height:56px;padding:0 24px;border-radius:999px;border:1px solid rgba(0,0,0,.4);color:#000000;font-family:Poppins, sans-serif;font-size:16px;font-weight:500;text-decoration:none" style-hover="border-color:#000000;color:#000000">Ver otros servicios</a>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;slug&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;diseno&quot;,&quot;video&quot;,&quot;web&quot;,&quot;presentaciones&quot;,&quot;mascotas&quot;,&quot;invitaciones&quot;],&quot;default&quot;:&quot;diseno&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  P = [
+    ['Entendemos', 'Revisamos tu marca, tu público y el objetivo del proyecto.'],
+    ['Definimos', 'Acordamos el enfoque creativo, el alcance y la dirección visual.'],
+    ['Producimos', 'Diseñamos y refinamos las piezas con tus comentarios.'],
+    ['Entregamos', 'Recibes los archivos y recursos acordados, listos para usarse.']
+  ];
+  D = {
+    diseno: { name:'Diseño visual', q:'diseno', eyebrow:'Servicio · Diseño visual', title:'Diseño visual que se entiende a la primera.',
+      lead:'Publicaciones, campañas y piezas promocionales con jerarquía, intención y una identidad que tu público aprende a reconocer.',
+      intro:'Diseñar para redes no es colocar texto sobre una imagen. Cada pieza parte de una pregunta: qué tiene que entender quien la ve, en qué contexto y en cuántos segundos. A partir de ahí decidimos jerarquía, legibilidad, color y formato para que tu mensaje compita bien en el feed y apoye un objetivo comercial concreto.',
+      includes:['Posts para Facebook','Posts para Instagram','Carruseles para Instagram y LinkedIn','Creatividades para campañas publicitarias','Portadas para redes sociales','Stories','Diseños promocionales','Lanzamientos de productos','Temporadas y fechas especiales','Adaptaciones a múltiples formatos','Sistemas visuales para contenido recurrente'],
+      forWho:['Negocios locales que publican sin un estilo definido','Marcas personales que quieren verse más profesionales','Equipos de marketing que necesitan apoyo de producción','Emprendedores que preparan un lanzamiento'],
+      problems:[{t:'Cada post parece de una marca distinta',d:'Creamos un sistema visual con reglas claras de tipografía, color y composición.'},{t:'Mucho texto, poca lectura',d:'Ordenamos la información para que lo importante se lea primero.'},{t:'Mis diseños no generan respuesta',d:'Conectamos cada pieza con una acción concreta: preguntar, visitar, comprar o recordar.'},{t:'No tengo tiempo para producir',d:'Preparamos piezas y adaptaciones listas para publicar.'}],
+      examples:[{ratio:'4 / 5',bg:'#85A840',fg:'#000000',accent:'#000000',kicker:'Post individual',big:'Otoño, ahora en taza.',cap:'Post de temporada · cafetería'},{ratio:'1 / 1',bg:'#F1F1F1',fg:'#000000',accent:'#0CC0DF',kicker:'Carrusel · portada',big:'5 herramientas que sí necesitas.',cap:'Carrusel educativo · ferretería'},{ratio:'9 / 16',bg:'#000000',fg:'#F1F1F1',accent:'#85A840',kicker:'Story',big:'Hoy: 2×1 en postres.',cap:'Story promocional · repostería'}],
+      deliverables:['Archivos finales en los formatos y medidas acordados para cada plataforma','Adaptaciones por formato cuando forman parte del alcance','Archivos editables o plantillas, solo si se acuerdan en la cotización'],
+      note:'Los precios dependen del número de piezas, su complejidad y las adaptaciones requeridas.',
+      needs:['Logotipo y, si existe, manual o guía de marca','Objetivo de las piezas y fechas de publicación','Textos, precios o datos que deben aparecer','Fotografías o recursos propios disponibles','Ejemplos de lo que te gusta y lo que no'],
+      faq:[{q:'¿Cuánto cuesta un post?',a:'Depende del alcance: cantidad de piezas, complejidad, adaptaciones y si partimos de un sistema visual existente. Te enviamos una cotización a la medida.'},{q:'¿Ustedes escriben los textos?',a:'Podemos proponer titulares y textos breves para las piezas. Si necesitas redacción de copies extensos o un calendario de contenido, lo incluimos en la cotización.'},{q:'¿Cuántas revisiones incluye?',a:'El número de rondas de revisión se define en cada cotización, para que sepas desde el inicio qué está incluido.'},{q:'¿Publican el contenido en mis redes?',a:'Nuestro servicio se centra en el diseño. La publicación o gestión de redes no está incluida por defecto; si la necesitas, coméntalo al cotizar.'}],
+      ctaTitle:'Hagamos que tu marca se reconozca en el feed.' },
+    video: { name:'Video y contenido audiovisual', q:'video', eyebrow:'Servicio · Video', title:'Video que se queda en la pantalla.',
+      lead:'Reels, TikTok, Shorts y videos promocionales editados con ritmo, texto legible y la personalidad de tu marca.',
+      intro:'En video, los primeros segundos deciden si alguien se queda. Editamos tu material pensando en el ritmo de cada plataforma, en textos que se leen sin pausar y en una identidad que se reconoce aunque el sonido esté apagado. Nos especializamos en edición, animación y producción digital; la grabación presencial no está incluida por defecto y se evalúa en cada caso.',
+      includes:['Reels','TikTok','YouTube Shorts','Videos promocionales','Videos de producto','Edición de clips','Motion graphics','Animaciones de texto','Thumbnails para YouTube','Adaptaciones verticales y horizontales','Piezas audiovisuales para campañas'],
+      forWho:['Marcas que ya graban pero no tienen tiempo de editar','Creadores y profesionales que buscan consistencia','Negocios que lanzan un producto o promoción','Canales de YouTube que necesitan thumbnails más claros'],
+      problems:[{t:'Nadie termina de ver mis videos',d:'Estructuramos cada pieza con un inicio que engancha y un mensaje claro.'},{t:'Los textos son imposibles de leer',d:'Cuidamos tipografía, tamaño y tiempo en pantalla de cada texto.'},{t:'Cada video luce diferente',d:'Definimos títulos, colores y transiciones que se repiten con intención.'},{t:'Tengo un solo video para todo',d:'Lo adaptamos a formatos verticales y horizontales según la plataforma.'}],
+      examples:[{ratio:'9 / 16',bg:'#000000',fg:'#F1F1F1',accent:'#0CC0DF',kicker:'Reel · texto animado',big:'60 segundos de oficio.',cap:'Reel de proceso · taller artesanal'},{ratio:'16 / 9',bg:'#0CC0DF',fg:'#000000',accent:'#000000',kicker:'Thumbnail YouTube',big:'¿Pasta en 15 minutos?',cap:'Thumbnail · canal de cocina'},{ratio:'1 / 1',bg:'#F1F1F1',fg:'#000000',accent:'#85A840',kicker:'Motion graphics',big:'Texto en movimiento.',cap:'Animación de texto · lanzamiento'}],
+      deliverables:['Videos finales exportados en las resoluciones y proporciones acordadas','Versiones verticales u horizontales, según el alcance','Thumbnails en formato para YouTube, si se incluyen'],
+      note:'Música y recursos de terceros se usan con licencias adecuadas al uso acordado; las condiciones se precisan en la cotización.',
+      needs:['Material grabado (clips, fotos, audio) en la mejor calidad disponible','Guion, idea o puntos clave del mensaje','Logotipo, colores y tipografías de la marca','Referencias de videos que te gusten','Plataformas y fechas de publicación'],
+      faq:[{q:'¿Ustedes graban el video?',a:'La grabación presencial no está incluida por defecto. Podemos orientarte sobre cómo grabar tu material para que la edición luzca mejor, y evaluar otras opciones al cotizar.'},{q:'¿Qué música pueden usar?',a:'Música con licencia adecuada para el uso acordado, o la que nos proporciones si cuentas con los derechos.'},{q:'¿Cuánto cuesta un reel?',a:'Depende de la duración, la complejidad de la edición, la animación y la cantidad de videos. Te enviamos una cotización a la medida.'},{q:'¿Cuánto tardan?',a:'Los plazos se definen en la cotización según la cantidad de piezas y su complejidad.'}],
+      ctaTitle:'Tu material merece una edición que lo haga brillar.' },
+    web: { name:'Web y experiencias digitales', q:'web', eyebrow:'Servicio · Web', title:'Sitios que explican, convencen y conectan.',
+      lead:'Landing pages, sitios para negocios, micrositios e invitaciones web diseñados para que te entiendan rápido y te contacten fácil.',
+      intro:'Una web profesional es el lugar donde tu marca habla con calma: qué haces, para quién, por qué elegirte y cómo contactarte. Diseñamos la estructura, los mensajes clave y la experiencia para que funcione primero en el celular. Las invitaciones web son nuestra especialidad de origen: ahí aprendimos a diseñar experiencias digitales que emocionan.',
+      includes:['Landing pages','Sitios web corporativos','Sitios para negocios','Páginas de servicios','Micrositios','Assets gráficos para web','Banners y recursos promocionales','Invitaciones web personalizadas','Diseño de experiencias digitales','Prototipos y conceptos de interfaz'],
+      forWho:['Negocios que dependen solo de redes sociales','Profesionales que necesitan una página para cerrar clientes','Marcas que lanzan un producto o campaña','Personas que celebran un evento especial'],
+      problems:[{t:'Fuera de redes no existo',d:'Un sitio propio te da un lugar estable para presentar tu oferta.'},{t:'Mi página no explica lo que hago',d:'Ordenamos la información para que se entienda en segundos.'},{t:'Me visitan pero no me escriben',d:'Diseñamos llamadas a la acción claras y caminos de contacto simples.'},{t:'En el celular se ve mal',d:'Diseñamos primero para móvil y después escalamos a pantallas grandes.'}],
+      examples:[{ratio:'4 / 3',bg:'#000000',fg:'#F1F1F1',accent:'#85A840',kicker:'Landing page',big:'Respira. Agenda tu sesión.',cap:'Landing · estudio de bienestar'},{ratio:'4 / 5',bg:'#F1F1F1',fg:'#000000',accent:'#85A840',kicker:'Sitio para negocio',big:'Sonríe sin prisas.',cap:'Sitio · clínica dental'},{ratio:'9 / 16',bg:'#000000',fg:'#F1F1F1',accent:'#0CC0DF',kicker:'Invitación web',big:'Mariana & Diego',cap:'Invitación web · boda'}],
+      deliverables:['Diseño de las páginas acordadas, adaptado a celular, tableta y escritorio','Sitio publicado o archivos de diseño, según el alcance contratado','Recursos gráficos y banners, si se incluyen'],
+      note:'Dominio, hosting y mantenimiento se acuerdan por separado en cada cotización.',
+      needs:['Objetivo principal del sitio','Textos e información de tus servicios','Logotipo, fotos y recursos de marca','Sitios de referencia','Dominio, si ya cuentas con uno'],
+      faq:[{q:'¿Incluye dominio y hosting?',a:'No por defecto. Te orientamos y lo definimos en la cotización según tus necesidades.'},{q:'¿Podré editar mi sitio?',a:'Depende de la tecnología que acordemos para tu proyecto. Lo platicamos antes de empezar.'},{q:'¿Cuánto tarda un sitio?',a:'El plazo depende del número de páginas y funciones. Se establece en la cotización.'},{q:'¿Qué diferencia hay entre landing page y sitio web?',a:'Una landing page se enfoca en un solo objetivo, como generar contactos para un servicio. Un sitio presenta tu negocio completo con varias secciones o páginas.'}],
+      ctaTitle:'Que tu web trabaje tanto como tú.' },
+    presentaciones: { name:'Presentaciones', q:'presentaciones', eyebrow:'Servicio · Presentaciones', title:'Presentaciones que se entienden sin leerlas dos veces.',
+      lead:'Pitch decks, propuestas comerciales y presentaciones corporativas con narrativa clara, jerarquía visual y tu marca en cada diapositiva.',
+      intro:'Una buena presentación no es un documento partido en diapositivas: es una historia contada en orden. Te ayudamos a decidir qué va primero, qué sobra y cómo mostrar datos y procesos para que tu audiencia entienda y recuerde. Después lo traducimos en un diseño consistente con tu identidad.',
+      includes:['Presentaciones comerciales','Presentaciones corporativas','Pitch decks','Presentaciones educativas','Presentaciones para propuestas','Presentaciones de servicios','Presentaciones de productos','Rediseño de presentaciones existentes','Sistemas visuales para presentaciones recurrentes'],
+      forWho:['Equipos comerciales que presentan propuestas','Emprendedores que buscan inversión o alianzas','Docentes y capacitadores','Empresas con presentaciones antiguas o inconsistentes'],
+      problems:[{t:'Mis diapositivas están llenas de texto',d:'Una idea por diapositiva y el detalle en tu discurso o en anexos.'},{t:'Cada área usa su propio formato',d:'Creamos una plantilla maestra con reglas claras.'},{t:'Los datos no se entienden',d:'Elegimos la visualización adecuada para cada dato.'},{t:'Mi propuesta no tiene un cierre claro',d:'Estructuramos la historia hacia un siguiente paso concreto.'}],
+      examples:[{ratio:'16 / 9',bg:'#F1F1F1',fg:'#000000',accent:'#85A840',kicker:'Pitch deck',big:'Llegar a tiempo es la propuesta.',cap:'Propuesta comercial · logística'},{ratio:'16 / 9',bg:'#000000',fg:'#F1F1F1',accent:'#0CC0DF',kicker:'Presentación educativa',big:'Módulo 1: tu dinero, en orden.',cap:'Curso en línea · finanzas personales'},{ratio:'16 / 9',bg:'#85A840',fg:'#000000',accent:'#F1F1F1',kicker:'Plantilla corporativa',big:'Una idea por diapositiva.',cap:'Sistema de plantillas · empresa de servicios'}],
+      deliverables:['Presentación final en el formato acordado (PowerPoint, Keynote, Google Slides o PDF)','Plantilla maestra reutilizable, si forma parte del alcance','Versión para compartir o imprimir, según se acuerde'],
+      note:'El precio depende del número de diapositivas, la complejidad de los contenidos y si se incluye plantilla.',
+      needs:['Contenido o presentación actual','Objetivo y audiencia de la presentación','Fecha en la que la presentarás','Recursos de marca','Datos, gráficas o imágenes que deben incluirse'],
+      faq:[{q:'¿Pueden rediseñar mi presentación actual?',a:'Sí. Partimos de tu contenido, reorganizamos la narrativa si hace falta y aplicamos un diseño consistente.'},{q:'¿Me ayudan con el contenido?',a:'Podemos reordenar la historia y sugerir ajustes de texto. La redacción completa se cotiza aparte.'},{q:'¿En qué programa la entregan?',a:'Se define al cotizar, según la herramienta que uses.'},{q:'¿Cuánto cuesta?',a:'Depende del número de diapositivas y la complejidad. Te enviamos una cotización a la medida.'}],
+      ctaTitle:'Tu próxima presentación puede ser la que lo cambie todo.' },
+    mascotas: { name:'Mascotas para marcas', q:'mascotas', eyebrow:'Servicio · Mascotas y personajes', title:'Un personaje que tu público quiera volver a ver.',
+      lead:'Diseñamos mascotas y personajes originales que dan rostro, voz y continuidad a la comunicación de tu marca.',
+      intro:'Una mascota bien pensada no es solo un dibujo simpático: es un recurso que puede protagonizar contenido, explicar tus productos, aparecer en empaques y hacer que la gente recuerde tu marca. Empezamos por la personalidad —cómo habla, cómo se mueve, qué la hace única— y después diseñamos el personaje y sus variaciones.',
+      includes:['Conceptualización del personaje','Exploración de personalidad','Diseño de mascota','Variaciones de expresiones y poses','Recursos gráficos derivados','Adaptaciones para redes sociales','Aplicaciones promocionales','Sistemas visuales para contenido recurrente'],
+      forWho:['Restaurantes y negocios de alimentos y bebidas','Tiendas y marcas de producto','Escuelas, academias y servicios para familias','Marcas personales y creadores de contenido'],
+      problems:[{t:'Mi marca se ve igual que la competencia',d:'Un personaje propio es un rasgo difícil de imitar.'},{t:'No sé qué publicar cada semana',d:'Una mascota abre formatos recurrentes: consejos, historias, temporadas.'},{t:'Mi comunicación se siente fría',d:'Un rostro y una voz hacen más cercana cualquier pieza.'},{t:'Quiero que me reconozcan a primera vista',d:'Formas, colores y expresiones consistentes construyen recuerdo.'}],
+      examples:[{img:'assets/mascota-vaso.png',alt:'Mascota ilustrada de un vaso de agua fresca roja con popote, caminando y saludando',cap:'Mascota · bebidas y antojitos'},{img:'assets/mascota-karateka.png',alt:'Personaje 2D de un niño karateka con cinta roja lanzando una patada',cap:'Personaje · escuela de artes marciales'},{img:'assets/mascota-bruja.png',alt:'Personaje estilo chibi de una pequeña bruja pelirroja con sombrero morado y varita',cap:'Personaje · marca temática'}],
+      deliverables:['Diseño final del personaje en los formatos acordados','Variaciones de expresiones y poses, según el alcance','Aplicaciones en redes o piezas promocionales, si se incluyen'],
+      note:'Derechos de uso, exclusividad y archivos fuente no se incluyen por defecto: se definen expresamente en cada cotización.',
+      needs:['Descripción de tu marca y tu público','Ideas o referencias de personalidad','Dónde usarás la mascota (redes, empaques, local)','Recursos de marca','Personajes que te gusten como referencia'],
+      faq:[{q:'¿La mascota será exclusiva de mi marca?',a:'La exclusividad y los derechos de uso se acuerdan expresamente en la cotización.'},{q:'¿Qué estilos pueden hacer?',a:'Trabajamos personajes 2D en distintos estilos —cartoon, chibi, ilustración plana— según la personalidad de tu marca.'},{q:'¿Pueden animarla?',a:'Podemos explorar animaciones para redes como parte del alcance; coméntalo al cotizar.'},{q:'¿Cuánto cuesta?',a:'Depende de la exploración, el número de expresiones y poses y las aplicaciones. Te enviamos una cotización a la medida.'}],
+      ctaTitle:'Dale a tu marca alguien que la represente.' },
+    invitaciones: { name:'Invitaciones web', q:'invitaciones', italic:true, eyebrow:'Invitaciones web · nuestra especialidad de origen', title:'Momentos extraordinarios merecen una invitación a su altura.',
+      lead:'Invitaciones web personalizadas para bodas, XV años, cumpleaños, aniversarios, baby showers y otros eventos.',
+      intro:'Antes de ser una agencia creativa integral, Duskyberry se especializó en invitaciones web. Sabemos que no es solo un enlace: es la primera impresión de tu celebración. Diseñamos cada invitación según el tono del evento y la personalizamos con los recursos que elijas, dentro del alcance contratado.',
+      includes:['Bodas','XV años','Cumpleaños','Aniversarios','Baby showers','Otros eventos personales o sociales'],
+      forWho:['Parejas que planean su boda','Familias que celebran unos XV años','Quien organiza un cumpleaños o aniversario especial','Futuras mamás y papás'],
+      problems:[{t:'Las invitaciones impresas son difíciles de entregar',d:'Un enlace llega a todos tus invitados al instante.'},{t:'Me preguntan la dirección una y otra vez',d:'Ubicación, horario e itinerario quedan siempre a la mano.'},{t:'Las confirmaciones están dispersas en chats',d:'La confirmación de asistencia puede integrarse, según el alcance.'},{t:'Las plantillas no se sienten mías',d:'Diseñamos a partir del estilo de tu celebración.'}],
+      examples:[{phone:'assets/invitaciones/inv-1.jpg',alt:'Invitación web de baby shower para Lucas',cap:'Baby shower · Lucas'},{phone:'assets/invitaciones/inv-2.jpg',alt:'Invitación web de boda Laura y Ernesto',cap:'Boda · Laura & Ernesto'},{phone:'assets/invitaciones/inv-6.jpg',alt:'Invitación web de boda Lizeth y Adrián',cap:'Boda · Lizeth & Adrián'},{phone:'assets/invitaciones/inv-4.jpg',alt:'Invitación web de XV años de Briana con mapa y playlist',cap:'XV años · Briana'},{phone:'assets/invitaciones/inv-3.jpg',alt:'Invitación web temática hawaiana Ohana para presentación de 3 años',cap:'Presentación de 3 años · Ohana'},{phone:'assets/invitaciones/inv-5.jpg',alt:'Invitación web de cumpleaños temática con cuenta regresiva',cap:'Cumpleaños · Sam'}],
+      delivTitle:'Posibilidades de personalización',
+      deliverables:['Diseño personalizado según el estilo del evento','Información del evento, itinerario y código de vestimenta','Galería de fotos','Ubicación con enlace a mapa','Música','Confirmación de asistencia'],
+      note:'No todas las invitaciones incluyen automáticamente todas las funciones: se eligen según el alcance contratado.',
+      needs:['Tipo de evento, fecha y lugar','Nombres y textos que deben aparecer','Fotos, si quieres galería','Colores o estilo que imaginas','Funciones que necesitas'],
+      faq:[{q:'¿Cómo comparto la invitación?',a:'Recibes un enlace que puedes enviar por WhatsApp, redes sociales o correo.'},{q:'¿Puedo hacer cambios después?',a:'Las condiciones para cambios se definen en la cotización.'},{q:'¿Con cuánta anticipación debo pedirla?',a:'Entre más anticipación, mejor. El plazo se acuerda en la cotización.'},{q:'¿Qué es Duskyberry Maker?',a:'Es la plataforma que estamos desarrollando para que puedas crear tus propias invitaciones. Todavía no está disponible.'}],
+      ctaTitle:'Cuéntanos de tu celebración.' }
+  };
+  renderVals() {
+    const s = this.D[this.props.slug] || this.D.diseno;
+    return {
+      s: { ...s, exNote: s.slug === 'invitaciones' || this.props.slug === 'invitaciones' ? 'proyectos realizados por Duskyberry' : 'conceptos de muestra · marcas ficticias', delivTitle: s.delivTitle || 'Entregables habituales', examples: s.examples.map(e => ({ ...e, phone: e.phone || '', img: e.img || '', capAlign: e.phone ? 'center' : 'left', comp: !e.img && !e.phone, alt: e.alt || (e.cap + ' (concepto)') })) },
+      bold: !s.italic, italic: !!s.italic,
+      showExamples: this.props.slug !== 'invitaciones',
+      secLabel: this.props.slug === 'invitaciones' ? 'Pedir ejemplo' : 'Ver ejemplos',
+      secHref: this.props.slug === 'invitaciones' ? 'https://wa.me/528442934546?text=' + encodeURIComponent('Hola, Duskyberry. Me gustaría ver ejemplos de invitaciones web.') : '#ejemplos',
+      secTarget: this.props.slug === 'invitaciones' ? '_blank' : '_self',
+      quoteHref: 'Cotizacion.dc.html?servicio=' + s.q,
+      needs: s.needs.map((t, i) => ({ t, n: String(i + 1).padStart(2, '0') })),
+      process: this.P.map(([t, d], i) => ({ t, d, n: 'Fase 0' + (i + 1), bar: i === 3 ? '#85A840' : 'rgba(241,241,241,.5)' }))
+    };
+  }
+}
+</script>
+</body>
+</html>

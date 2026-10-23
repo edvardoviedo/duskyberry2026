@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Solicita una cotización · Duskyberry</title>
+<meta name="description" content="Cuéntanos sobre tu proyecto de diseño, video, web, presentaciones, mascotas o invitaciones web. Preparamos tu solicitud y la envías por WhatsApp.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/duskyberry-mark.png">
+<link rel="apple-touch-icon" href="assets/duskyberry-mark.png">
+<script src="seo.js" defer></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="site-config.js"></script>
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#000000;color:#F1F1F1}
+a{color:#85A840}a:hover{color:#9BBF52}
+:focus-visible{outline:2px solid #0CC0DF;outline-offset:3px}
+input::placeholder,textarea::placeholder{color:#6E7486}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</helmet>
+<dc-import name="SiteHeader" current="" hint-size="100%,72px"></dc-import>
+<main id="contenido" style="background:#000000;color:#F1F1F1;padding:clamp(40px,6vw,88px) 0 clamp(80px,10vw,140px)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
+      <nav aria-label="Ruta de navegación" style="font-family:Poppins, sans-serif;font-size:13px;color:#8A90A0;display:flex;gap:8px"><a href="Inicio.dc.html" style="color:#AEB3C0;text-decoration:none">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Cotización</span></nav>
+      <p style="margin:0;font-family:Poppins, sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#85A840">Solicita una cotización</p>
+      <h1 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(38px,5vw,72px);line-height:1;letter-spacing:-0.045em;text-wrap:balance">Cuéntanos qué quieres crear.</h1>
+      <p style="margin:0;font-family:Poppins, sans-serif;font-size:17px;line-height:1.65;color:#B8BCC8;max-width:480px;text-wrap:pretty">Tres pasos breves. Al final revisas tu información y la enviamos juntos por WhatsApp, donde podremos resolver dudas y preparar tu propuesta.</p>
+      <ul style="margin:8px 0 0;padding:20px 0 0;list-style:none;border-top:1px solid rgba(241,241,241,.1);display:flex;flex-direction:column;gap:14px;font-family:Poppins, sans-serif;font-size:14px;line-height:1.55;color:#AEB3C0;max-width:480px">
+        <li style="display:flex;gap:12px"><span style="width:6px;height:6px;margin-top:8px;border-radius:50%;background:#85A840;flex-shrink:0"></span>Los precios dependen del alcance, la complejidad y la cantidad de piezas.</li>
+        <li style="display:flex;gap:12px"><span style="width:6px;height:6px;margin-top:8px;border-radius:50%;background:#85A840;flex-shrink:0"></span>No guardamos tus datos en este sitio: solo se usan para preparar el mensaje.</li>
+      </ul>
+    </div>
+
+    <div style="background:#0C0D10;border:1px solid rgba(241,241,241,.08);border-radius:8px;padding:clamp(22px,3.4vw,44px);min-width:0">
+      <sc-if value="{{ notOpened }}" hint-placeholder-val="{{ true }}">
+        <ol aria-label="Pasos" style="margin:0 0 32px;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+            <li aria-current="{{ s.aria }}" style="display:flex;flex-direction:column;gap:10px;font-family:Poppins, sans-serif;font-size:13px;font-weight:500;color:{{ s.fg }}">
+              <span style="height:3px;border-radius:2px;background:{{ s.bar }};transition:background .3s ease"></span>
+              <span>{{ s.label }}</span>
+            </li>
+          </sc-for>
+        </ol>
+        <form onSubmit="{{ submit }}" novalidate="" style="display:flex;flex-direction:column;gap:22px">
+          <sc-if value="{{ s0 }}" hint-placeholder-val="{{ true }}">
+            <fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:20px;min-width:0">
+              <legend style="padding:0;margin-bottom:4px;font-family:Montserrat, sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.03em;color:#F1F1F1">¿Con quién hablamos?</legend>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <label for="f-nombre" style="font-family:Poppins, sans-serif;font-size:14px;font-weight:500">Nombre</label>
+                <input id="f-nombre" name="nombre" autocomplete="name" maxlength="80" value="{{ f.nombre }}" onChange="{{ on.nombre }}" aria-invalid="{{ inv.nombre }}" aria-describedby="e-nombre" style="width:100%;box-sizing:border-box;min-height:52px;padding:14px 16px;font-family:Poppins, sans-serif;font-size:16px;color:#F1F1F1;background:#000000;border:1px solid {{ bc.nombre }};border-radius:6px;outline:none" style-focus="border-color:#0CC0DF">
+                <span id="e-nombre" role="alert" style="font-family:Poppins, sans-serif;font-size:13px;color:#FF8A7A;min-height:0">{{ err.nombre }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <label for="f-marca" style="font-family:Poppins, sans-serif;font-size:14px;font-weight:500">Nombre de la marca o negocio</label>
+                <input id="f-marca" name="marca" autocomplete="organization" maxlength="100" value="{{ f.marca }}" onChange="{{ on.marca }}" aria-invalid="{{ inv.marca }}" aria-describedby="e-marca" style="width:100%;box-sizing:border-box;min-height:52px;padding:14px 16px;font-family:Poppins, sans-serif;font-size:16px;color:#F1F1F1;background:#000000;border:1px solid {{ bc.marca }};border-radius:6px;outline:none" style-focus="border-color:#0CC0DF">
+                <span id="e-marca" role="alert" style="font-family:Poppins, sans-serif;font-size:13px;color:#FF8A7A">{{ err.marca }}</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px">
+                <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+                  <label for="f-email" style="font-family:Poppins, sans-serif;font-size:14px;font-weight:500">Correo electrónico <span style="color:#8A90A0;font-weight:400">(opcional)</span></label>
+                  <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" value="{{ f.email }}" onChange="{{ on.email }}" aria-invalid="{{ inv.email }}" aria-describedby="e-email" style="width:100%;box-sizing:border-box;min-height:52px;padding:14px 16px;font-family:Poppins, sans-serif;font-size:16px;color:#F1F1F1;background:#000000;border:1px solid {{ bc.email }};border-radius:6px;outline:none" style-focus="border-color:#0CC0DF">
+                  <span id="e-email" role="alert" style="font-family:Poppins, sans-serif;font-size:13px;color:#FF8A7A">{{ err.email }}</span>
+                </div>
+              </div>
+            </fieldset>
+          </sc-if>
+
+          <sc-if value="{{ s1 }}" hint-placeholder-val="{{ false }}">
+            <fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:20px;min-width:0">
+              <legend style="padding:0;margin-bottom:4px;font-family:Montserrat, sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.03em;color:#F1F1F1">Tu proyecto</legend>
+              <div role="radiogroup" aria-labelledby="l-servicio" aria-describedby="e-servicio" style="display:flex;flex-direction:column;gap:10px">
+                <span id="l-servicio" style="font-family:Poppins, sans-serif;font-size:14px;font-weight:500">Servicio de interés</span>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px">
+                  <sc-for list="{{ svc }}" as="o" hint-placeholder-count="8">
+                    <label style="display:flex;align-items:center;gap:12px;min-height:52px;padding:0 14px;border-radius:6px;border:1px solid {{ o.bd }};background:{{ o.bg }};font-family:Poppins, sans-serif;font-size:15px;color:#F1F1F1;cursor:pointer;transition:border-color .2s ease, background .2s ease">
+                      <input type="radio" name="servicio" value="{{ o.key }}" checked="{{ o.checked }}" onChange="{{ o.pick }}" style="width:18px;height:18px;margin:0;accent-color:#85A840;flex-shrink:0">
+                      <span>{{ o.label }}</span>
+                    </label>
+                  </sc-for>
+                </div>
+                <span id="e-servicio" role="alert" style="font-family:Poppins, sans-serif;font-size:13px;color:#FF8A7A">{{ err.servicio }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <label for="f-descripcion" style="font-family:Poppins, sans-serif;font-size:14px;font-weight:500">Descripción del proyecto</label>
+                <span id="h-descripcion" style="font-family:Poppins, sans-serif;font-size:13px;color:#8A90A0">Qué necesitas, para qué lo usarás y cualquier detalle importante.</span>
+                <textarea id="f-descripcion" name="descripcion" rows="5" maxlength="1500" value="{{ f.descripcion }}" onChange="{{ on.descripcion }}" aria-invalid="{{ inv.descripcion }}" aria-describedby="h-descripcion e-descripcion" style="width:100%;box-sizing:border-box;padding:14px 16px;font-family:Poppins, sans-serif;font-size:16px;line-height:1.5;color:#F1F1F1;background:#000000;border:1px solid {{ bc.descripcion }};border-radius:6px;outline:none;resize:vertical" style-focus="border-color:#0CC0DF"></textarea>
+                <span id="e-descripcion" role="alert" style="font-family:Poppins, sans-serif;font-size:13px;color:#FF8A7A">{{ err.descripcion }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <label for="f-referencias" style="font-family:Poppins, sans-serif;font-size:14px;font-weight:500">Redes sociales o sitio web de referencia <span style="color:#8A90A0;font-weight:400">(opcional)</span></label>
+                <input id="f-referencias" name="referencias" maxlength="300" placeholder="instagram.com/tumarca" value="{{ f.referencias }}" onChange="{{ on.referencias }}" style="width:100%;box-sizing:border-box;min-height:52px;padding:14px 16px;font-family:Poppins, sans-serif;font-size:16px;color:#F1F1F1;background:#000000;border:1px solid rgba(241,241,241,.16);border-radius:6px;outline:none" style-focus="border-color:#0CC0DF">
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px">
+                <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+                  <label for="f-presupuesto" style="font-family:Poppins, sans-serif;font-size:14px;font-weight:500">Presupuesto aproximado <span style="color:#8A90A0;font-weight:400">(opcional)</span></label>
+                  <select id="f-presupuesto" name="presupuesto" value="{{ f.presupuesto }}" onChange="{{ on.presupuesto }}" style="width:100%;box-sizing:border-box;min-height:52px;padding:0 14px;font-family:Poppins, sans-serif;font-size:16px;color:#F1F1F1;background:#000000;border:1px solid rgba(241,241,241,.16);border-radius:6px;outline:none" style-focus="border-color:#0CC0DF">
+                    <sc-for list="{{ budgets }}" as="b" hint-placeholder-count="5"><option value="{{ b.v }}">{{ b.l }}</option></sc-for>
+                  </select>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+                  <label for="f-plazo" style="font-family:Poppins, sans-serif;font-size:14px;font-weight:500">Fecha o plazo deseado <span style="color:#8A90A0;font-weight:400">(opcional)</span></label>
+                  <input id="f-plazo" name="plazo" maxlength="80" placeholder="Ej. antes del 15 de diciembre" value="{{ f.plazo }}" onChange="{{ on.plazo }}" style="width:100%;box-sizing:border-box;min-height:52px;padding:14px 16px;font-family:Poppins, sans-serif;font-size:16px;color:#F1F1F1;background:#000000;border:1px solid rgba(241,241,241,.16);border-radius:6px;outline:none" style-focus="border-color:#0CC0DF">
+                </div>
+              </div>
+            </fieldset>
+          </sc-if>
+
+          <sc-if value="{{ s2 }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:20px">
+              <h2 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.03em">Revisa tu solicitud</h2>
+              <dl style="margin:0;display:flex;flex-direction:column;border-top:1px solid rgba(241,241,241,.1)">
+                <sc-for list="{{ review }}" as="r" hint-placeholder-count="6">
+                  <div style="display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid rgba(241,241,241,.08)">
+                    <dt style="font-family:Poppins, sans-serif;font-size:13px;color:#8A90A0">{{ r.k }}</dt>
+                    <dd style="margin:0;font-family:Poppins, sans-serif;font-size:15px;line-height:1.5;color:#F1F1F1;overflow-wrap:anywhere;white-space:pre-wrap">{{ r.v }}</dd>
+                  </div>
+                </sc-for>
+              </dl>
+              <div style="display:flex;flex-wrap:wrap;gap:16px">
+                <button type="button" onClick="{{ goStep0 }}" style="background:none;border:0;padding:0;min-height:44px;font-family:Poppins, sans-serif;font-size:14px;font-weight:500;color:#85A840;cursor:pointer;text-decoration:underline">Editar contacto</button>
+                <button type="button" onClick="{{ goStep1 }}" style="background:none;border:0;padding:0;min-height:44px;font-family:Poppins, sans-serif;font-size:14px;font-weight:500;color:#85A840;cursor:pointer;text-decoration:underline">Editar proyecto</button>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <label style="display:flex;gap:12px;align-items:flex-start;font-family:Poppins, sans-serif;font-size:14px;line-height:1.55;color:#D6D9E0;cursor:pointer">
+                  <input type="checkbox" checked="{{ f.consent }}" onChange="{{ on.consent }}" aria-invalid="{{ inv.consent }}" aria-describedby="e-consent" style="width:20px;height:20px;margin:1px 0 0;accent-color:#85A840;flex-shrink:0">
+                  <span>He leído el <a href="Aviso-de-privacidad.dc.html" target="_blank" rel="noopener" style="color:#85A840">aviso de privacidad</a> y acepto que Duskyberry use estos datos para responder a mi solicitud.</span>
+                </label>
+                <span id="e-consent" role="alert" style="font-family:Poppins, sans-serif;font-size:13px;color:#FF8A7A">{{ err.consent }}</span>
+              </div>
+              <p style="margin:0;padding:14px 16px;background:rgba(12,192,223,.08);border:1px solid rgba(12,192,223,.3);border-radius:6px;font-family:Poppins, sans-serif;font-size:14px;line-height:1.55;color:#D6F3F8">Al continuar se abrirá WhatsApp con tu mensaje listo. La solicitud se envía cuando tú confirmas el envío desde la aplicación.</p>
+            </div>
+          </sc-if>
+
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:8px">
+            <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}">
+              <button type="button" onClick="{{ back }}" style="min-height:52px;padding:0 20px;border-radius:999px;border:1px solid rgba(241,241,241,.22);background:transparent;color:#F1F1F1;font-family:Poppins, sans-serif;font-size:15px;font-weight:500;cursor:pointer">Atrás</button>
+            </sc-if>
+            <button type="submit" style="margin-left:auto;display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;border:0;background:#85A840;color:#030716;font-family:Poppins, sans-serif;font-size:16px;font-weight:600;cursor:pointer;transition:background .2s ease, transform .15s ease" style-hover="background:#9BBF52" style-active="transform:scale(.98)">{{ cta }}</button>
+          </div>
+        </form>
+      </sc-if>
+
+      <sc-if value="{{ opened }}" hint-placeholder-val="{{ false }}">
+        <div role="status" aria-live="polite" style="display:flex;flex-direction:column;gap:20px">
+          <span style="width:52px;height:52px;border-radius:50%;background:#85A840;display:flex;align-items:center;justify-content:center;font-family:Montserrat, sans-serif;font-weight:800;font-size:22px;color:#030716">✓</span>
+          <h2 id="estado-titulo" tabindex="-1" style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(26px,3vw,36px);line-height:1.05;letter-spacing:-0.035em;outline:none">Tu mensaje está listo en WhatsApp.</h2>
+          <p style="margin:0;font-family:Poppins, sans-serif;font-size:16px;line-height:1.65;color:#C2C6D0">Abrimos WhatsApp en otra pestaña. <strong style="color:#F1F1F1">Tu solicitud aún no se ha enviado:</strong> confirma el envío desde la aplicación para que la recibamos.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
+            <a href="{{ waUrl }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border-radius:999px;background:#85A840;color:#030716;font-family:Poppins, sans-serif;font-size:15px;font-weight:600;text-decoration:none" style-hover="background:#9BBF52;color:#030716">Abrir WhatsApp de nuevo</a>
+            <button type="button" onClick="{{ copy }}" style="min-height:52px;padding:0 22px;border-radius:999px;border:1px solid rgba(241,241,241,.22);background:transparent;color:#F1F1F1;font-family:Poppins, sans-serif;font-size:15px;font-weight:500;cursor:pointer">{{ copyLabel }}</button>
+            <sc-if value="{{ mailUrl }}" hint-placeholder-val="{{ false }}">
+              <a href="{{ mailUrl }}" style="display:inline-flex;align-items:center;min-height:52px;padding:0 22px;color:#F1F1F1;font-family:Poppins, sans-serif;font-size:15px;text-decoration:underline">Enviar por correo</a>
+            </sc-if>
+          </div>
+          <button type="button" onClick="{{ restart }}" style="align-self:flex-start;background:none;border:0;padding:0;min-height:44px;font-family:Poppins, sans-serif;font-size:14px;color:#AEB3C0;cursor:pointer;text-decoration:underline">Editar la solicitud</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  SVC = [['diseno','Diseño visual'],['video','Video y contenido audiovisual'],['presentaciones','Presentaciones'],['web','Web y landing pages'],['invitaciones','Invitaciones web'],['mascotas','Mascotas para marcas'],['integral','Proyecto integral'],['otro','Otro']];
+  BUDGETS = [['','Prefiero no indicarlo'],['Menos de $5,000 MXN','Menos de $5,000 MXN'],['$5,000 a $15,000 MXN','$5,000 a $15,000 MXN'],['$15,000 a $40,000 MXN','$15,000 a $40,000 MXN'],['Más de $40,000 MXN','Más de $40,000 MXN']];
+  state = this.init();
+  init() {
+    let s = '';
+    try { s = new URLSearchParams(location.search).get('servicio') || ''; } catch (e) {}
+    if (!this.SVC.some(([k]) => k === s)) s = '';
+    return { step: 0, status: 'idle', copied: false, errors: {},
+      f: { nombre:'', marca:'', email:'', servicio:s, descripcion:'', referencias:'', presupuesto:'', plazo:'', consent:false } };
+  }
+  cfg() { return window.DUSKY_CONFIG || { whatsapp: '528442934546', email: null }; }
+  clean(v, multi) {
+    let s = String(v == null ? '' : v);
+    s = multi ? s.replace(/[\u0000-\u0009\u000B-\u001F\u007F]/g, '') : s.replace(/[\u0000-\u001F\u007F]/g, ' ');
+    return s.replace(/[ \t]{2,}/g, ' ').trim();
+  }
+  set = (k) => (e) => {
+    const v = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    this.setState(st => { const errors = { ...st.errors }; delete errors[k]; return { f: { ...st.f, [k]: v }, errors }; });
+  };
+  validate(step) {
+    const f = this.state.f, e = {};
+    if (step === 0) {
+      if (this.clean(f.nombre).length < 2) e.nombre = 'Escribe tu nombre.';
+      if (this.clean(f.marca).length < 2) e.marca = 'Escribe el nombre de tu marca o negocio.';
+      if (this.clean(f.email) && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(this.clean(f.email))) e.email = 'Revisa tu correo, por ejemplo: nombre@negocio.com';
+    }
+    if (step === 1) {
+      if (!f.servicio) e.servicio = 'Elige el servicio que más se acerque a tu proyecto.';
+      if (this.clean(f.descripcion, true).length < 20) e.descripcion = 'Cuéntanos un poco más (al menos 20 caracteres).';
+    }
+    if (step === 2 && !f.consent) e.consent = 'Necesitamos tu consentimiento para usar estos datos.';
+    return e;
+  }
+  focusFirst(e) {
+    const order = ['nombre','marca','email','servicio','descripcion','consent'];
+    const k = order.find(x => e[x]);
+    setTimeout(() => {
+      const el = k === 'servicio' ? document.querySelector('input[name="servicio"]') : k === 'consent' ? document.querySelector('input[type="checkbox"]') : document.getElementById('f-' + k);
+      el && el.focus();
+    }, 30);
+  }
+  svcLabel(k) { const x = this.SVC.find(([a]) => a === k); return x ? x[1] : ''; }
+  message() {
+    const f = this.state.f, c = (v, m) => this.clean(v, m);
+    const L = ['Hola, Duskyberry. Quiero solicitar una cotización.', '',
+      '• Nombre: ' + c(f.nombre), '• Marca o negocio: ' + c(f.marca), '• Correo: ' + (c(f.email) || 'No indicado'),
+      '• Servicio de interés: ' + this.svcLabel(f.servicio), '• Proyecto: ' + c(f.descripcion, true)];
+    if (c(f.referencias)) L.push('• Referencias: ' + c(f.referencias));
+    if (f.presupuesto) L.push('• Presupuesto aproximado: ' + f.presupuesto);
+    if (c(f.plazo)) L.push('• Fecha o plazo: ' + c(f.plazo));
+    L.push('', 'He leído y acepto el aviso de privacidad.');
+    return L.join('\n');
+  }
+  waUrl() { return 'https://wa.me/' + this.cfg().whatsapp + '?text=' + encodeURIComponent(this.message()); }
+  submit = (ev) => {
+    ev.preventDefault();
+    const step = this.state.step, e = this.validate(step);
+    if (Object.keys(e).length) { this.setState({ errors: e }); this.focusFirst(e); return; }
+    if (step < 2) { this.setState({ step: step + 1, errors: {} }); window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+    window.open(this.waUrl(), '_blank', 'noopener');
+    this.setState({ status: 'opened' }, () => { const h = document.getElementById('estado-titulo'); h && h.focus(); });
+  };
+  copy = async () => {
+    try { await navigator.clipboard.writeText(this.message()); this.setState({ copied: true }); } catch (e) { this.setState({ copied: false }); }
+  };
+  renderVals() {
+    const { f, step, errors, status } = this.state;
+    const keys = ['nombre','marca','email','descripcion','consent'];
+    const on = {}, inv = {}, bc = {}, err = {};
+    ['nombre','marca','email','descripcion','referencias','presupuesto','plazo','consent'].forEach(k => on[k] = this.set(k));
+    keys.concat('servicio').forEach(k => { err[k] = errors[k] || ''; inv[k] = errors[k] ? 'true' : 'false'; bc[k] = errors[k] ? '#FF8A7A' : 'rgba(241,241,241,.16)'; });
+    const labels = ['Contacto', 'Proyecto', 'Revisión'];
+    const c = (v, m) => this.clean(v, m);
+    const cfg = this.cfg();
+    return {
+      f, on, inv, bc, err,
+      s0: step === 0, s1: step === 1, s2: step === 2,
+      canBack: step > 0,
+      back: () => this.setState({ step: step - 1, errors: {} }),
+      goStep0: () => this.setState({ step: 0 }), goStep1: () => this.setState({ step: 1 }),
+      cta: step === 2 ? 'Enviar por WhatsApp' : 'Continuar',
+      steps: labels.map((l, i) => ({ label: (i + 1) + '. ' + l, aria: i === step ? 'step' : undefined, bar: i <= step ? '#85A840' : 'rgba(241,241,241,.14)', fg: i <= step ? '#F1F1F1' : '#8A90A0' })),
+      svc: this.SVC.map(([k, l]) => ({ key: k, label: l, checked: f.servicio === k, pick: () => this.setState(st => { const errors = { ...st.errors }; delete errors.servicio; return { f: { ...st.f, servicio: k }, errors }; }), bd: f.servicio === k ? '#85A840' : 'rgba(241,241,241,.16)', bg: f.servicio === k ? 'rgba(133,168,64,.12)' : 'transparent' })),
+      budgets: this.BUDGETS.map(([v, l]) => ({ v, l })),
+      review: [
+        { k: 'Nombre', v: c(f.nombre) }, { k: 'Marca o negocio', v: c(f.marca) }, { k: 'Correo', v: c(f.email) || '—' },
+        { k: 'Servicio', v: this.svcLabel(f.servicio) }, { k: 'Proyecto', v: c(f.descripcion, true) },
+        { k: 'Referencias', v: c(f.referencias) || '—' }, { k: 'Presupuesto', v: f.presupuesto || '—' }, { k: 'Plazo', v: c(f.plazo) || '—' }
+      ],
+      submit: this.submit,
+      notOpened: status !== 'opened', opened: status === 'opened',
+      waUrl: this.waUrl(),
+      mailUrl: cfg.email ? 'mailto:' + cfg.email + '?subject=' + encodeURIComponent('Cotización · ' + c(f.marca)) + '&body=' + encodeURIComponent(this.message()) : '',
+      copy: this.copy, copyLabel: this.state.copied ? 'Mensaje copiado' : 'Copiar mensaje',
+      restart: () => this.setState({ status: 'idle', step: 2 })
+    };
+  }
+}
+</script>
+</body>
+</html>

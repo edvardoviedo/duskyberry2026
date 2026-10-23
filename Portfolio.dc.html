@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Portfolio creativo · Duskyberry</title>
+<meta name="description" content="Conceptos creativos de Duskyberry: social media, video, branding y mascotas, presentaciones, web e invitaciones digitales.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/duskyberry-mark.png">
+<link rel="apple-touch-icon" href="assets/duskyberry-mark.png">
+<script src="site-config.js"></script>
+<script src="seo.js" defer=""></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0;background:#000000;color:#F1F1F1}a{color:#85A840}a:hover{color:#9BBF52}:focus-visible{outline:2px solid #0CC0DF;outline-offset:3px}@keyframes dbfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion: reduce){*{transition-duration:.001ms!important;animation-duration:.001ms!important}}</style>
+</helmet>
+<dc-import name="SiteHeader" current="portfolio" hint-size="100%,72px"></dc-import>
+<main id="contenido" style="background:#000000;color:#F1F1F1;padding:clamp(40px,6vw,96px) 0 clamp(80px,10vw,140px)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:36px">
+    <nav aria-label="Ruta de navegación" style="font-family:Poppins, sans-serif;font-size:13px;color:#8A90A0;display:flex;gap:8px"><a href="Inicio.dc.html" style="color:#AEB3C0;text-decoration:none">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Portfolio</span></nav>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
+      <h1 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(40px,6.4vw,96px);line-height:.98;letter-spacing:-0.045em">Ideas que se pueden ver.</h1>
+      
+    </div>
+    <sc-if value="{{ fDesk }}" hint-placeholder-val="{{ true }}"><div role="group" aria-label="Filtrar portfolio por categoría" style="display:flex;flex-wrap:wrap;gap:8px">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="7">
+        <button type="button" onClick="{{ f.pick }}" aria-pressed="{{ f.pressed }}" style="min-height:44px;padding:0 18px;border-radius:999px;border:1px solid {{ f.bd }};background:{{ f.bg }};color:{{ f.fg }};font-family:Poppins, sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:background .2s ease, color .2s ease">{{ f.label }} <span style="opacity:.6">{{ f.count }}</span></button>
+      </sc-for>
+    </div></sc-if>
+    <sc-if value="{{ fMob }}" hint-placeholder-val="{{ false }}">
+      <label style="position:relative;display:flex;flex-direction:column;gap:8px;max-width:420px">
+        <span style="font-family:Poppins, sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#85A840">Categoría</span>
+        <select value="{{ filterVal }}" onChange="{{ onFilterSelect }}" aria-label="Filtrar portfolio por categoría" style="appearance:none;-webkit-appearance:none;width:100%;min-height:52px;padding:0 48px 0 18px;border-radius:999px;border:1px solid rgba(241,241,241,.28);background:#1E222E;color:#F1F1F1;font-family:Poppins, sans-serif;font-size:16px;font-weight:500;cursor:pointer">
+          <sc-for list="{{ filters }}" as="o" hint-placeholder-count="5"><option value="{{ o.val }}">{{ o.optLabel }}</option></sc-for>
+        </select>
+        <span aria-hidden="true" style="position:absolute;right:20px;bottom:18px;width:9px;height:9px;border-right:2px solid #85A840;border-bottom:2px solid #85A840;transform:rotate(45deg);pointer-events:none"></span>
+      </label>
+    </sc-if>
+    <p aria-live="polite" style="margin:0;font-family:Poppins, sans-serif;font-size:13px;color:#8A90A0">{{ countLabel }}</p>
+    <div style="columns:3 280px;column-gap:20px">
+      <sc-for list="{{ pieces }}" as="p" hint-placeholder-count="9">
+        <button type="button" onClick="{{ p.open }}" aria-label="{{ p.aria }}" style="display:block;width:100%;margin:0 0 24px;padding:0;border:0;background:transparent;text-align:left;cursor:pointer;break-inside:avoid;color:#F1F1F1;font:inherit;animation:dbfade .4s ease both">
+          <sc-if value="{{ p.img }}" hint-placeholder-val="{{ false }}">
+            <span style="position:relative;display:block"><img src="{{ p.img }}" alt="" width="1080" height="1350" loading="lazy" style="width:100%;height:auto;aspect-ratio:{{ p.ratio }};object-fit:cover;display:block;border-radius:6px;background:#1E222E;transition:transform .35s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.015)"><sc-if value="{{ p.isCar }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:12px;right:12px;display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:rgba(0,0,0,.72);color:#F1F1F1;font-family:Poppins, sans-serif;font-size:12px;font-weight:600"><span style="display:flex;gap:3px"><span style="width:6px;height:6px;border-radius:50%;background:#F1F1F1"></span><span style="width:6px;height:6px;border-radius:50%;background:rgba(241,241,241,.45)"></span><span style="width:6px;height:6px;border-radius:50%;background:rgba(241,241,241,.45)"></span></span>{{ p.carLabel }}</span></sc-if></span>
+          </sc-if>
+          <sc-if value="{{ p.comp }}" hint-placeholder-val="{{ true }}">
+            <span style="position:relative;display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:{{ p.ratio }};background:{{ p.bg }};color:{{ p.fg }};border-radius:6px;padding:22px;box-sizing:border-box;overflow:hidden;border:1px solid rgba(241,241,241,.06);transition:transform .35s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.015)">
+              <span style="display:flex;justify-content:space-between;gap:8px;position:relative;z-index:1;font-family:Poppins, sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase"><span>{{ p.kicker }}</span><span style="opacity:.75">Concepto</span></span>
+              <span style="position:relative;z-index:1;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(24px,2.4vw,32px);line-height:.98;letter-spacing:-0.04em;max-width:86%;text-wrap:balance">{{ p.big }}</span>
+              <span style="position:absolute;right:-14%;bottom:-14%;width:46%;aspect-ratio:1;border-radius:50%;background:{{ p.accent }}"></span>
+            </span>
+          </sc-if>
+          <span style="display:flex;justify-content:space-between;gap:12px;padding:12px 2px 0;font-family:Poppins, sans-serif;font-size:14px"><span style="font-weight:500">{{ p.name }}</span><span style="color:#8A90A0;flex-shrink:0">{{ p.catLabel }}</span></span>
+        </button>
+      </sc-for>
+    </div>
+    <section aria-labelledby="email-titulo" ref="{{ mailRef }}" style="position:relative;height:380vh;margin-top:clamp(40px,6vw,80px)">
+      <div style="position:sticky;top:84px;height:calc(100vh - 100px);height:calc(100svh - 100px);min-height:420px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 32px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <p style="margin:0;font-family:Poppins, sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#85A840">Email marketing</p>
+            <h2 id="email-titulo" style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(28px,4vw,52px);line-height:1;letter-spacing:-0.04em">Correos que dan ganas de abrir.</h2>
+          </div>
+          <p style="margin:0;font-family:Poppins, sans-serif;font-size:14px;color:#8A90A0">Desliza para leerlos</p>
+        </div>
+        <div style="flex:1;min-height:0;display:grid;grid-template-columns:{{ mailCols }};background:#0C0D10;border:1px solid rgba(241,241,241,.1);border-radius:12px;overflow:hidden">
+          <sc-if value="{{ mailDesk }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;background:#111318;border-right:1px solid rgba(241,241,241,.08);min-width:0">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:18px 18px 14px;border-bottom:1px solid rgba(241,241,241,.08)">
+                <span style="display:flex;align-items:center;gap:10px;font-family:Montserrat, sans-serif;font-weight:800;font-size:16px;letter-spacing:-0.02em"><img src="assets/duskyberry-mark.png" alt="" width="22" height="22" style="width:22px;height:22px">Bandeja de entrada</span>
+                <span style="font-family:Poppins, sans-serif;font-size:12px;color:#8A90A0">3</span>
+              </div>
+              <div role="tablist" aria-label="Correos del portfolio" style="display:flex;flex-direction:column;padding:8px">
+                <sc-for list="{{ mails }}" as="m" hint-placeholder-count="3">
+                  <button type="button" role="tab" aria-selected="{{ m.sel }}" onClick="{{ m.go }}" style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start;width:100%;padding:14px 12px;border:0;border-radius:8px;background:{{ m.bg }};text-align:left;cursor:pointer;color:#F1F1F1;font:inherit;transition:background .25s ease">
+                    <span style="width:36px;height:36px;border-radius:50%;background:{{ m.color }};color:#000000;display:flex;align-items:center;justify-content:center;font-family:Montserrat, sans-serif;font-weight:800;font-size:15px">{{ m.initial }}</span>
+                    <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+                      <span style="display:flex;justify-content:space-between;gap:8px;font-family:Poppins, sans-serif;font-size:14px;font-weight:600"><span>{{ m.from }}</span><span style="font-weight:400;font-size:12px;color:#8A90A0;flex-shrink:0">{{ m.time }}</span></span>
+                      <span style="font-family:Poppins, sans-serif;font-size:13px;font-weight:500;color:#E2E4EA;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ m.subject }}</span>
+                      <span style="font-family:Poppins, sans-serif;font-size:12px;color:#8A90A0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ m.preview }}</span>
+                    </span>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+          <div style="display:flex;flex-direction:column;min-width:0;min-height:0">
+            <sc-if value="{{ mailMobile }}" hint-placeholder-val="{{ false }}">
+              <div role="tablist" aria-label="Correos del portfolio" style="display:flex;gap:6px;padding:10px;border-bottom:1px solid rgba(241,241,241,.08);overflow-x:auto">
+                <sc-for list="{{ mails }}" as="m" hint-placeholder-count="3">
+                  <button type="button" role="tab" aria-selected="{{ m.sel }}" onClick="{{ m.go }}" style="flex-shrink:0;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(241,241,241,.16);background:{{ m.bg }};color:#F1F1F1;font-family:Poppins, sans-serif;font-size:13px;font-weight:500;cursor:pointer">{{ m.from }}</button>
+                </sc-for>
+              </div>
+            </sc-if>
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;padding:16px 20px;border-bottom:1px solid rgba(241,241,241,.08)">
+              <div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+                <span style="font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(16px,1.6vw,20px);letter-spacing:-0.02em;color:#F1F1F1">{{ cur.subject }}</span>
+                <span style="font-family:Poppins, sans-serif;font-size:13px;color:#8A90A0">De: {{ cur.from }} · Para: suscriptores</span>
+              </div>
+              <span style="font-family:Poppins, sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#0CC0DF;border:1px solid rgba(12,192,223,.4);border-radius:999px;padding:4px 10px">Concepto creativo</span>
+            </div>
+            <div ref="{{ vpRef }}" style="position:relative;flex:1;min-height:0;overflow:hidden;background:#E9E9EC">
+              <img ref="{{ imgRef }}" src="{{ cur.src }}" alt="{{ cur.alt }}" width="650" height="{{ cur.h }}" onLoad="{{ onImg }}" style="display:block;width:100%;max-width:600px;height:auto;margin:0 auto;will-change:transform;box-shadow:0 0 0 1px rgba(0,0,0,.06)">
+            </div>
+            <div aria-hidden="true" style="height:3px;background:rgba(241,241,241,.08)"><div ref="{{ barRef }}" style="height:100%;width:0;background:#85A840"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid rgba(241,241,241,.12);padding-top:32px">
+      <p style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(24px,3vw,36px);letter-spacing:-0.035em">¿Imaginas algo así para tu marca?</p>
+      <a href="Cotizacion.dc.html" style="display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 28px;border-radius:999px;background:#85A840;color:#000000;font-family:Poppins, sans-serif;font-size:16px;font-weight:600;text-decoration:none" style-hover="background:#9BBF52;color:#000000">Solicita una cotización</a>
+    </div>
+  </div>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<sc-if value="{{ sel }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeSel }}" style="position:fixed;inset:0;z-index:150;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);box-sizing:border-box;overflow-y:auto">
+    <div role="dialog" aria-modal="true" aria-labelledby="pieza-titulo" onClick="{{ stop }}" style="width:100%;max-width:960px;background:#1E222E;border-radius:8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));overflow:hidden;margin:auto">
+      <div style="background:#0C0D10;display:flex;align-items:center;justify-content:center;padding:clamp(20px,3vw,40px)">
+        <sc-if value="{{ sel.isCar }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative;width:100%;max-width:{{ sel.carMax }};display:flex;flex-direction:column;gap:14px">
+            <div ref="{{ carRef }}" onScroll="{{ onCar }}" style="display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:6px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain">
+              <sc-for list="{{ sel.slides }}" as="sl" hint-placeholder-count="5">
+                <img src="{{ sl.src }}" alt="{{ sl.alt }}" width="1080" height="1350" draggable="false" style="flex:0 0 100%;width:100%;height:auto;aspect-ratio:{{ sel.carRatio }};object-fit:{{ sel.carFit }};background:#0C0D10;display:block;scroll-snap-align:center;user-select:none">
+              </sc-for>
+            </div>
+            <button type="button" onClick="{{ carPrev }}" aria-label="Lámina anterior" style="position:absolute;left:10px;top:calc(50% - 30px);width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#F1F1F1;font-size:20px;cursor:pointer;opacity:{{ prevOp }}">‹</button>
+            <button type="button" onClick="{{ carNext }}" aria-label="Lámina siguiente" style="position:absolute;right:10px;top:calc(50% - 30px);width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#F1F1F1;font-size:20px;cursor:pointer;opacity:{{ nextOp }}">›</button>
+            <div style="display:flex;align-items:center;justify-content:center;gap:10px">
+              <sc-for list="{{ carDots }}" as="d" hint-placeholder-count="5">
+                <button type="button" onClick="{{ d.go }}" aria-label="{{ d.label }}" aria-current="{{ d.cur }}" style="width:{{ d.w }};height:8px;padding:0;border:0;border-radius:999px;background:{{ d.bg }};cursor:pointer;transition:width .25s ease, background .25s ease"></button>
+              </sc-for>
+              <span style="margin-left:6px;font-family:Poppins, sans-serif;font-size:12px;color:#AEB3C0">{{ carCount }}</span>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ sel.single }}" hint-placeholder-val="{{ false }}">
+          <img src="{{ sel.img }}" alt="{{ sel.alt }}" width="1080" height="1350" style="width:100%;max-width:520px;max-height:78vh;height:auto;aspect-ratio:{{ sel.ratio }};object-fit:contain;display:block;border-radius:6px">
+        </sc-if>
+        <sc-if value="{{ sel.comp }}" hint-placeholder-val="{{ true }}">
+          <div style="position:relative;width:100%;max-width:{{ sel.maxW }};aspect-ratio:{{ sel.ratio }};background:{{ sel.bg }};color:{{ sel.fg }};border-radius:6px;padding:26px;box-sizing:border-box;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between">
+            <span style="position:relative;z-index:1;font-family:Poppins, sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase">{{ sel.kicker }}</span>
+            <span style="position:relative;z-index:1;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(26px,3vw,40px);line-height:.98;letter-spacing:-0.04em;max-width:86%">{{ sel.big }}</span>
+            <span style="position:absolute;right:-14%;bottom:-14%;width:46%;aspect-ratio:1;border-radius:50%;background:{{ sel.accent }}"></span>
+          </div>
+        </sc-if>
+      </div>
+      <div style="padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <span style="font-family:Poppins, sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#85A840">{{ sel.catLabel }}</span>
+          <button type="button" id="cerrar-pieza" onClick="{{ closeSel }}" aria-label="Cerrar vista detallada" style="width:44px;height:44px;border-radius:999px;border:1px solid rgba(241,241,241,.22);background:transparent;color:#F1F1F1;font-size:20px;cursor:pointer;line-height:1">×</button>
+        </div>
+        <h2 id="pieza-titulo" style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(24px,2.6vw,32px);line-height:1.08;letter-spacing:-0.03em">{{ sel.name }}</h2>
+        <p style="margin:0;font-family:Poppins, sans-serif;font-size:16px;line-height:1.65;color:#C2C6D0">{{ sel.desc }}</p>
+        
+        <a href="{{ sel.cta }}" style="align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;background:#85A840;color:#000000;font-family:Poppins, sans-serif;font-size:15px;font-weight:600;text-decoration:none;margin-top:auto" style-hover="background:#9BBF52;color:#000000">Quiero algo así</a>
+      </div>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: 'todos', sel: null, mail: 0, w: window.innerWidth, car: 0 };
+  carRef = React.createRef();
+  onCar = () => { const el = this.carRef.current; if (!el) return; const i = Math.round(el.scrollLeft / Math.max(1, el.clientWidth)); if (i !== this.state.car) this.setState({ car: i }); };
+  carGo = (i) => { const el = this.carRef.current; if (!el) return; const n = el.children.length; i = Math.max(0, Math.min(n - 1, i)); el.scrollTo({ left: i * el.clientWidth, behavior: 'smooth' }); };
+  mailRef = React.createRef(); vpRef = React.createRef(); imgRef = React.createRef(); barRef = React.createRef();
+  MAILS = [
+    { from: 'Touch in SOL', initial: 'S', color: '#F2B8A8', time: '9:41', subject: 'Summer Luvin’ for Your Skin', preview: 'Summer savings are here! Prices starting at $9.99.', src: 'assets/emails/email-touch-in-sol.png', h: 1342, alt: 'Email de verano para marca de cosméticos: hero en la playa, productos destacados y club de puntos' },
+    { from: 'TOUS', initial: 'T', color: '#F1F1F1', time: '11:02', subject: 'Un verano que se siente.', preview: 'Fragancias frescas para él y para ella.', src: 'assets/emails/email-tous.png', h: 1386, alt: 'Email de fragancias de verano: hero con modelo en la playa, tres perfumes, puntos de venta y cierre' },
+    { from: 'Tamagotchi', initial: 'T', color: '#0CC0DF', time: '13:25', subject: 'Tu infancia evolucionó', preview: '¡La nueva generación Tamagotchi ya llegó!', src: 'assets/emails/email-tamagotchi.png', h: 1985, alt: 'Email de lanzamiento de Tamagotchi: hero con llavero, merch de temporada, playlist y tiendas' }
+  ];
+  onMailScroll = () => {
+    const el = this.mailRef.current; if (!el) return;
+    const n = this.MAILS.length, r = el.getBoundingClientRect();
+    const total = Math.max(1, el.offsetHeight - window.innerHeight + 100);
+    const p = Math.min(1, Math.max(0, (84 - r.top) / total));
+    const idx = Math.min(n - 1, Math.floor(p * n));
+    const lp = Math.min(1, Math.max(0, (p * n - idx) * 1.2 - 0.08));
+    if (idx !== this.state.mail) { this.setState({ mail: idx }); return; }
+    const img = this.imgRef.current, vp = this.vpRef.current;
+    if (img && vp) { const max = Math.max(0, img.offsetHeight - vp.clientHeight); img.style.transform = 'translate3d(0,' + (-max * lp).toFixed(1) + 'px,0)'; }
+    if (this.barRef.current) this.barRef.current.style.width = (lp * 100).toFixed(1) + '%';
+  };
+  goMail = (i) => {
+    const el = this.mailRef.current; if (!el) return;
+    const total = Math.max(1, el.offsetHeight - window.innerHeight + 100);
+    const top = el.getBoundingClientRect().top + window.scrollY - 84 + total * (i / this.MAILS.length) + 2;
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+  componentDidUpdate(pp, ps) { if (ps.mail !== this.state.mail) this.onMailScroll(); }
+  CATS = [['todos','Todos'],['social','Social media'],['video','Video'],['presentaciones','Presentaciones'],['web','Web'],['invitaciones','Invitaciones digitales']];
+  SVC = { social:'diseno', video:'video', branding:'mascotas', presentaciones:'presentaciones', web:'web', invitaciones:'invitaciones' };
+  PIECES = [
+    {"cat":"social","name":"Mischief · post de lanzamiento","img":"assets/portfolio/mischief-post.jpg","ratio":"4 / 5","alt":"Post de hamburguesa flotando sobre fondo morado con el titular Good food. Bad intentions.","desc":"Post de lanzamiento para una hamburguesería: titular a dos tonos, ingredientes en explosión y un sello amarillo que anuncia la novedad."},
+    {"cat":"social","name":"Techstore · Level up your setup","img":"assets/portfolio/techstore.jpg","ratio":"4 / 5","alt":"Post con control de videojuego flotando y el titular Level up your setup, 50% off","desc":"Post promocional para una tienda de tecnología: producto heroico sobre fondo profundo, titular extendido y una franja verde con la oferta que se lee de un vistazo."},
+    {"cat":"social","name":"Frontdark · private live session","img":"assets/portfolio/frontdark.jpg","ratio":"4 / 5","alt":"Póster de concierto en blanco y negro con cantante gritando al micrófono y el nombre Frontdark en vertical","desc":"Póster para una sesión en vivo en un bar: fotografía cruda en blanco y negro, nombre de la banda en vertical a toda altura y los datos del evento en una retícula clara."},
+    {"cat":"social","name":"Forja · Built through discipline","img":"assets/portfolio/forja.jpg","ratio":"4 / 5","alt":"Retrato en claroscuro de atleta y el titular Built through discipline","desc":"Post para un club de fuerza: claroscuro dramático, titular condensado en escala de grises y una línea de datos que mantiene el tono sobrio."},
+    {"cat":"social","name":"Pulso · Find your momentum","img":"assets/portfolio/pulso.jpg","ratio":"4 / 5","alt":"Post de gimnasio con titular Find your momentum, bloque verde lima con servicios y foto de atleta con cuerdas","desc":"Post para un estudio de entrenamiento: titular grande, bloque de color con servicios y mensualidad, y una foto de acción que da energía a la composición."},
+    {"cat":"social","name":"LM Beauty Studio · Beauty after dark","img":"assets/portfolio/lm-beauty.jpg","ratio":"4 / 5","alt":"Post de maquillaje artístico de temporada con retrato en arco y el titular Beauty after dark","desc":"Post de temporada para un estudio de belleza: retrato en marco de arco, patrón ilustrado de fondo y serif editorial con cursiva para el gancho."},
+    {"cat":"web","name":"Amarillo Stay · banner de hospedaje","img":"assets/portfolio/amarillo-stay.jpg","ratio":"16 / 9","alt":"Banner horizontal de casa de campo con sala luminosa y el titular Your own little escape","desc":"Banner para un hospedaje en renta: mitad tipográfica con serif clásica y amenidades, mitad fotográfica que vende la luz y el espacio."},
+    {"cat":"social","name":"Verso · Prism Gloss","img":"assets/portfolio/verso-post-v2.jpg","ratio":"4 / 5","alt":"Retrato con luz neón y labios con gloss, titular Tu cara. Tus reglas.","desc":"Post editorial para una marca de maquillaje: retrato a sangre, tipografía serif de gran formato y luz neón como sello de la colección."},
+    {"cat":"social","name":"Mosso · bar de matcha","img":"assets/portfolio/mosso-post.jpg","ratio":"1 / 1","alt":"Vaso de iced matcha visto desde arriba sobre fondo amarillo con el titular Pasan sorbos.","desc":"Post para un bar de matcha: producto cenital, contraste amarillo-verde y un juego de palabras que se queda en la memoria."},
+    {"cat":"social","name":"Textura · Cuidado real","img":"assets/portfolio/textura-post-v2.jpg","ratio":"4 / 5","alt":"Post de crema con textura rosada en primer plano y el titular Cuidado real. Texturas extraordinarias.","desc":"Post de producto para skincare: textura protagonista, ficha técnica en tipografía mono y un titular a dos colores."},
+    {"cat":"social","name":"Mischief · carrusel de 5 láminas","img":"assets/portfolio/mischief-c1.jpg","ratio":"4 / 5","alt":"Portada del carrusel de Mischief: Taste the impossible.","slides":[{"src":"assets/portfolio/mischief-c1.jpg","alt":"Portada de carrusel lila: Taste the impossible."},{"src":"assets/portfolio/mischief-c2.jpg","alt":"Lámina del carrusel con ingredientes flotando: Seven layers. Zero restraint."},{"src":"assets/portfolio/mischief-c3.jpg","alt":"Lámina con la anatomía de la hamburguesa en seis capas numeradas."},{"src":"assets/portfolio/mischief-c4.jpg","alt":"Lámina roja con el titular We don’t do sensible."},{"src":"assets/portfolio/mischief-c5.jpg","alt":"Cierre del carrusel con hamburguesa en cápsula morada y botón con el usuario de la marca."}],"desc":"Carrusel completo para una hamburguesería: portada con promesa, producto a sangre, anatomía en seis capas, cambio de color para romper el ritmo y cierre con llamada a la acción. Desliza para verlo en orden."},
+    {"cat":"social","name":"Plinth · story","img":"assets/portfolio/plinth-story.jpg","ratio":"9 / 16","alt":"Story con bailarina y el titular Tu etapa más fuerte empieza aquí.","desc":"Story de captación: titular serif con cursiva expresiva y un botón directo a la clase de prueba."},
+    {"cat":"social","name":"Taller Nopal · cata de pulque","img":"assets/portfolio/taller-nopal.jpg","ratio":"4 / 5","alt":"Post con jarrito de barro con pulque y el titular Taller Nopal","desc":"Post para un taller de maguey y pulque: fotografía de oficio arriba, tipografía condensada con carácter y los datos del taller en una franja limpia."},
+    {"cat":"presentaciones","name":"Norte Logística · presentación corporativa","img":"assets/portfolio/norte-logistica.jpg","ratio":"16 / 9","alt":"Portada de presentación con operador en almacén y el titular Movemos lo que hace avanzar a México.","desc":"Portada de presentación corporativa para una empresa de logística: foto de operación real, degradado a azul de marca y un titular que resume la propuesta."},
+    {"cat":"web","name":"Estudio Pausa · landing","img":"assets/portfolio/pausa-desktop.jpg","ratio":"16 / 10","carRatio":"16 / 10","alt":"Landing de estudio de yoga en escritorio con el titular Un espacio para volver a ti.","slides":[{"src":"assets/portfolio/pausa-desktop.jpg","alt":"Versión de escritorio de la landing de Estudio Pausa"},{"src":"assets/portfolio/pausa-mobile.jpg","alt":"Versión móvil de la landing de Estudio Pausa"}],"desc":"Landing para un estudio de movimiento consciente: serif cálida, mucho aire y una sola acción principal. Desliza para ver la versión móvil."},
+    {"cat":"video","name":"Ramen en casa · thumbnail","img":"assets/portfolio/ramen-thumbnail.jpg","ratio":"16 / 9","alt":"Thumbnail con tazón de ramen humeante y el titular El secreto está en el caldo.","desc":"Thumbnail para un canal de cocina: el platillo como protagonista, titular corto legible en tamaño pequeño y una palabra en cursiva que da el gancho."},
+    {"cat":"presentaciones","name":"Finanzas Claras · curso","img":"assets/portfolio/finanzas-claras.jpg","ratio":"16 / 9","alt":"Portada de curso de educación financiera con tarjeta de presupuesto 50/30/20","desc":"Portada para un curso de educación financiera: titular grande, datos del curso en una línea y una tarjeta que explica el presupuesto 50/30/20 de un vistazo."},
+    {"cat":"web","name":"Clínica Alba · sitio","img":"assets/portfolio/alba-desktop.jpg","ratio":"16 / 10","carRatio":"16 / 10","alt":"Sitio de clínica en escritorio con el titular Cuidarte, con claridad y cercanía.","slides":[{"src":"assets/portfolio/alba-desktop.jpg","alt":"Versión de escritorio del sitio de Clínica Alba"},{"src":"assets/portfolio/alba-mobile.jpg","alt":"Versión móvil del sitio de Clínica Alba"}],"desc":"Sitio para una clínica familiar: lenguaje claro, horarios y dirección visibles y botones de llamar y agendar siempre a la mano. Desliza para ver la versión móvil."},
+    {"cat":"invitaciones","name":"Valentina · XV años","img":"assets/portfolio/valentina-xv.jpg","ratio":"9 / 16","alt":"Invitación web de XV años con quinceañera al atardecer y el nombre Valentina","desc":"Invitación web de XV años: fotografía al atardecer, nombre en caligrafía y detalles dorados, con cuenta regresiva, ubicación y RSVP."}
+  ];
+  componentDidMount() {
+    this.onKey = (e) => { if (e.key === 'Escape' && this.state.sel) this.closeSel(); }; window.addEventListener('keydown', this.onKey);
+    this.onResize = () => { this.setState({ w: window.innerWidth }); this.onMailScroll(); };
+    window.addEventListener('scroll', this.onMailScroll, { passive: true }); window.addEventListener('resize', this.onResize);
+    this.MAILS.forEach(m => { const i = new Image(); i.src = m.src; });
+    this.onMailScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); window.removeEventListener('scroll', this.onMailScroll); window.removeEventListener('resize', this.onResize); document.body.style.overflow = ''; }
+  openSel = (p, btn) => { this.setState({ car: 0 }); this.lastBtn = btn; document.body.style.overflow = 'hidden'; this.setState({ sel: p }, () => { const c = document.getElementById('cerrar-pieza'); c && c.focus(); }); };
+  closeSel = () => { document.body.style.overflow = ''; this.setState({ sel: null }, () => { this.lastBtn && this.lastBtn.focus(); }); };
+  renderVals() {
+    const label = Object.fromEntries(this.CATS), f = this.state.filter, s = this.state.sel;
+    const list = this.PIECES.filter(p => f === 'todos' || p.cat === f);
+    return {
+      fMob: this.state.w < 760, fDesk: !(this.state.w < 760), filterVal: this.state.filter, onFilterSelect: (e) => this.setState({ filter: e.target.value }),
+      filters: this.CATS.map(([k, l]) => ({ label: l, count: k === 'todos' ? this.PIECES.length : this.PIECES.filter(p => p.cat === k).length, pressed: f === k ? 'true' : 'false', bg: f === k ? '#F1F1F1' : 'transparent', fg: f === k ? '#000000' : '#E2E4EA', bd: f === k ? '#F1F1F1' : 'rgba(241,241,241,.22)', pick: () => this.setState({ filter: k }), val: k, optLabel: l + ' (' + (k === 'todos' ? this.PIECES.length : this.PIECES.filter(p => p.cat === k).length) + ')' })),
+      countLabel: list.length + (list.length === 1 ? ' concepto' : ' conceptos'),
+      pieces: list.map(p => ({ ...p, isCar: !!p.slides, carLabel: p.slides ? (p.carRatio ? 'Escritorio + móvil' : p.slides.length + ' láminas') : '', comp: !p.img, catLabel: label[p.cat], aria: 'Ver concepto: ' + p.name, open: (e) => this.openSel(p, e.currentTarget) })),
+      sel: s ? { ...s, carRatio: s.carRatio || '4 / 5', carFit: s.carRatio ? 'contain' : 'cover', carMax: s.carRatio ? '760px' : '520px', isCar: !!s.slides, single: !!s.img && !s.slides, comp: !s.img, catLabel: label[s.cat], cta: 'Cotizacion.dc.html?servicio=' + this.SVC[s.cat], maxW: s.ratio && s.ratio.startsWith('9') ? '280px' : (s.ratio && s.ratio.startsWith('16') ? '100%' : '420px'), disclaimer: s.img ? 'Ilustración de muestra con nombre y negocio ficticios. No representa a un cliente real.' : 'Concepto creativo con una marca ficticia. No representa a un cliente real ni resultados de campaña.' } : null,
+      carRef: this.carRef, onCar: this.onCar,
+      carPrev: () => this.carGo(this.state.car - 1), carNext: () => this.carGo(this.state.car + 1),
+      prevOp: this.state.car > 0 ? '1' : '0.3', nextOp: s && s.slides && this.state.car < s.slides.length - 1 ? '1' : '0.3',
+      carDots: s && s.slides ? s.slides.map((x, i) => ({ go: () => this.carGo(i), label: 'Ir a la lámina ' + (i + 1), cur: i === this.state.car ? 'true' : 'false', w: i === this.state.car ? '22px' : '8px', bg: i === this.state.car ? '#85A840' : 'rgba(241,241,241,.35)' })) : [],
+      carCount: s && s.slides ? (this.state.car + 1) + ' / ' + s.slides.length : '',
+      closeSel: this.closeSel, stop: (e) => e.stopPropagation(),
+      mailRef: this.mailRef, vpRef: this.vpRef, imgRef: this.imgRef, barRef: this.barRef,
+      mailDesk: this.state.w >= 860, mailMobile: this.state.w < 860,
+      mailCols: this.state.w >= 860 ? 'minmax(260px,320px) minmax(0,1fr)' : 'minmax(0,1fr)',
+      mails: this.MAILS.map((m, i) => ({ ...m, sel: i === this.state.mail ? 'true' : 'false', bg: i === this.state.mail ? '#1E222E' : 'transparent', go: () => this.goMail(i) })),
+      cur: this.MAILS[this.state.mail],
+      onImg: this.onMailScroll
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Aviso de privacidad · Duskyberry</title>
+<meta name="description" content="Aviso de privacidad de Duskyberry: qué datos recabamos, para qué los usamos y cómo ejercer tus derechos ARCO.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/duskyberry-mark.png">
+<script src="site-config.js"></script>
+<script src="seo.js" defer></script>
+<style>html{-webkit-text-size-adjust:100%}body{margin:0;background:#F1F1F1;color:#000000}a{color:#4A6420}a:hover{color:#000000}:focus-visible{outline:2px solid #0CC0DF;outline-offset:3px}</style>
+</helmet>
+<dc-import name="SiteHeader" current="" hint-size="100%,72px"></dc-import>
+<main id="contenido" style="background:#F1F1F1;color:#000000;padding:clamp(48px,7vw,104px) 0 clamp(80px,10vw,140px)">
+  <article style="max-width:760px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:28px;font-family:Poppins, sans-serif;font-size:16px;line-height:1.7;color:#2A2F3C">
+    <nav aria-label="Ruta de navegación" style="font-size:13px;color:#4A5060;display:flex;gap:8px"><a href="Inicio.dc.html" style="color:#4A5060;text-decoration:none">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Aviso de privacidad</span></nav>
+    <h1 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:-0.045em;color:#000000">Aviso de privacidad</h1>
+    <p style="margin:0;font-size:18px;color:#000000">Tu información es importante para nosotros. Aquí te explicamos, de forma clara, qué datos recabamos y cómo los cuidamos, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</p>
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="10">
+      <section style="display:flex;flex-direction:column;gap:10px;padding-top:24px;border-top:1px solid rgba(0,0,0,.12)">
+        <h2 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.03em;color:#000000">{{ s.h }}</h2>
+        <p style="margin:0">{{ s.p }}</p>
+      </section>
+    </sc-for>
+    <p style="margin:0;padding-top:20px;border-top:1px solid rgba(0,0,0,.14);font-size:14px;color:#4A5060">Consulta también nuestros <a href="Terminos.dc.html">términos y condiciones</a>. Última actualización: 22 de octubre de 2026.</p>
+  </article>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  S = [
+    ['1. Responsable', 'Duskyberry, agencia creativa con sede en México, es responsable del uso y protección de los datos personales que nos compartes. Puedes contactarnos por WhatsApp al +52 844 293 4546.'],
+    ['2. Datos que recabamos', 'Solo pedimos lo necesario para atenderte: tu nombre, el nombre de tu marca o negocio, tu correo electrónico (opcional), tus perfiles de redes sociales o sitio web y la información sobre tu proyecto. Tu número de WhatsApp lo recibimos cuando nos envías el mensaje desde esa aplicación. No solicitamos datos sensibles.'],
+    ['3. Para qué los usamos', 'Usamos tus datos para responder tu solicitud, preparar cotizaciones, evaluar solicitudes de muestra gratuita, comunicarnos contigo sobre tu proyecto y dar seguimiento a los servicios que contrates.'],
+    ['4. Cómo los recibimos', 'Este sitio no guarda la información de los formularios. Al completarlos, se prepara un mensaje que se abre en WhatsApp y nos llega solo si tú decides enviarlo. A partir de ahí, la conversación también se rige por las políticas de privacidad de WhatsApp.'],
+    ['5. Con quién los compartimos', 'No vendemos ni compartimos tus datos con terceros, salvo que sea necesario para cumplir una obligación legal o que nos des tu autorización.'],
+    ['6. Cookies', 'El sitio solo usa el almacenamiento del navegador para recordar que ya viste la animación de entrada. No usamos cookies de publicidad.'],
+    ['7. Cuánto tiempo los conservamos', 'Conservamos tus datos el tiempo necesario para atender tu solicitud o proyecto y cumplir con nuestras obligaciones legales. Después, los eliminamos de forma segura.'],
+    ['8. Tus derechos ARCO', 'Puedes pedirnos en cualquier momento acceder a tus datos, corregirlos, eliminarlos u oponerte a su uso. Solo envíanos un mensaje por WhatsApp al +52 844 293 4546 indicando tu nombre y lo que necesitas. Te responderemos por el mismo medio.'],
+    ['9. Revocar tu consentimiento', 'Si ya no quieres que usemos tus datos, escríbenos por el mismo medio y dejaremos de tratarlos, salvo que la ley nos obligue a conservarlos.'],
+    ['10. Cambios a este aviso', 'Si actualizamos este aviso, publicaremos la nueva versión en esta página con su fecha de actualización.']
+  ];
+  renderVals() { return { sections: this.S.map(([h, p]) => ({ h, p })) }; }
+}
+</script>
+</body>
+</html>

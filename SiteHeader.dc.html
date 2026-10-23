@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,700;0,800;1,300&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>@keyframes dbspin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes dbpulse{0%,100%{opacity:.35}50%{opacity:1}}</style>
+</helmet>
+<sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}">
+  <div role="status" aria-live="polite" style="position:fixed;inset:0;z-index:200;background:#000000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transition:opacity .45s ease;opacity:{{ loaderOpacity }}">
+    {{ loaderMark }}
+    <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">Cargando el sitio de Duskyberry</span>
+  </div>
+</sc-if>
+<header style="position:fixed;top:0;left:0;right:0;z-index:90;background:#000000;border-bottom:1px solid rgba(241,241,241,.08)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="Inicio.dc.html" aria-label="Duskyberry, ir al inicio" style="display:flex;align-items:center;gap:10px;color:#F1F1F1;text-decoration:none;flex-shrink:0">
+      <img src="assets/duskyberry-mark.png" alt="" width="40" height="40" style="width:40px;height:40px;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="transform:rotate(-20deg)">
+    </a>
+    <sc-if value="{{ desk }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Principal" style="display:flex;align-items:center;gap:clamp(16px,1.8vw,28px)">
+        <sc-for list="{{ links }}" as="l" hint-placeholder-count="6">
+          <a href="{{ l.href }}" aria-current="{{ l.aria }}" style="font-family:Poppins, sans-serif;font-size:15px;font-weight:500;color:{{ l.color }};text-decoration:none;display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:2px solid {{ l.bar }}" style-hover="color:#F1F1F1">
+            <span>{{ l.label }}</span>
+            <sc-if value="{{ l.soon }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0CC0DF;border:1px solid rgba(12,192,223,.45);border-radius:999px;padding:2px 7px">Pronto</span></sc-if>
+          </a>
+        </sc-for>
+      </nav>
+    </sc-if>
+    <div style="display:flex;align-items:center;gap:12px">
+      
+      <a href="Cotizacion.dc.html" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;background:#85A840;color:#030716;font-family:Poppins, sans-serif;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s ease, transform .2s ease" style-hover="background:#9BBF52" style-active="transform:scale(.97)">Cotizar</a>
+      <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ toggle }}" aria-expanded="{{ openStr }}" aria-controls="menu-movil" aria-label="{{ menuLabel }}" style="width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:transparent;border:1px solid rgba(241,241,241,.22);border-radius:999px;cursor:pointer;padding:0">
+          <span style="display:block;width:18px;height:2px;background:#F1F1F1;transition:transform .25s ease;transform:{{ bar1 }}"></span>
+          <span style="display:block;width:18px;height:2px;background:#F1F1F1;transition:transform .25s ease;transform:{{ bar2 }}"></span>
+        </button>
+      </sc-if>
+    </div>
+  </div>
+</header>
+<div aria-hidden="true" style="height:72px"></div>
+<sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+  <div id="menu-movil" style="position:fixed;top:72px;left:0;right:0;bottom:0;z-index:89;background:#000000;overflow-y:auto;padding:24px clamp(20px,4vw,48px) 40px;display:flex;flex-direction:column;gap:32px">
+    <nav aria-label="Menú móvil" style="display:flex;flex-direction:column">
+      <sc-for list="{{ links }}" as="l" hint-placeholder-count="6">
+        <a href="{{ l.href }}" onClick="{{ close }}" aria-current="{{ l.aria }}" style="font-family:Montserrat, sans-serif;font-size:clamp(30px,8vw,44px);font-weight:800;letter-spacing:-0.035em;color:#F1F1F1;text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(241,241,241,.08);display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <span>{{ l.label }}</span>
+          <sc-if value="{{ l.soon }}" hint-placeholder-val="{{ false }}"><span style="font-family:Poppins, sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#0CC0DF">Próximamente</span></sc-if>
+        </a>
+      </sc-for>
+    </nav>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <a href="Cotizacion.dc.html" onClick="{{ close }}" style="display:flex;align-items:center;justify-content:center;min-height:56px;border-radius:999px;background:#85A840;color:#030716;font-family:Poppins, sans-serif;font-size:16px;font-weight:600;text-decoration:none">Solicita una cotización</a>
+      <a href="Muestra-gratuita.dc.html" onClick="{{ close }}" style="display:flex;align-items:center;justify-content:center;min-height:56px;border-radius:999px;border:1px solid rgba(241,241,241,.25);color:#F1F1F1;font-family:Poppins, sans-serif;font-size:16px;font-weight:500;text-decoration:none">Solicita tu muestra gratuita</a>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;120px&quot;},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;servicios&quot;,&quot;portfolio&quot;,&quot;invitaciones&quot;,&quot;blog&quot;,&quot;nosotros&quot;,&quot;maker&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;forceLoader&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = this.init();
+  init() {
+    let seen = false;
+    try { seen = sessionStorage.getItem('db_loader_seen') === '1'; } catch (e) {}
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const loading = (!!this.props.forceLoader || !seen) && !reduce;
+    if (loading) window.__dbLoaderActive = true;
+    this.reduce = reduce;
+    this.bodyFade = !reduce && !loading;
+    if (this.bodyFade && document.body) { document.body.style.opacity = '0'; }
+    return { w: window.innerWidth, open: false, loading, fade: false };
+  }
+  pageReveal() {
+    const b = document.body;
+    if (this.reduce) { b.style.opacity = ''; return; }
+    if (this.bodyFade) {
+      requestAnimationFrame(() => requestAnimationFrame(() => { b.style.transition = 'opacity .8s cubic-bezier(.22,.61,.36,1)'; b.style.opacity = '1'; }));
+      this.tReveal = setTimeout(() => { b.style.transition = ''; b.style.opacity = ''; }, 1100);
+    }
+    this.tSec = setTimeout(() => {
+      if (document.querySelector('[data-reveal]') || !('IntersectionObserver' in window)) return;
+      const main = document.querySelector('main'); if (!main) return;
+      const below = (el) => el.getBoundingClientRect().top > window.innerHeight;
+      const tops = Array.from(main.querySelectorAll('section')).filter(s => !s.parentElement.closest('section'));
+      const secs = tops.filter(s => below(s) && s.offsetHeight < window.innerHeight * 2.5);
+      const items = Array.from(main.querySelectorAll('article, figure')).filter(el => !el.parentElement.closest('article, figure') && !secs.some(s => s.contains(el)) && below(el));
+      const els = secs.concat(items);
+      els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(22px)'; el.style.transition = 'opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1)'; });
+      this.io = new IntersectionObserver(ents => ents.forEach(e => { if (e.isIntersecting) { const t = e.target; t.style.opacity = '1'; t.style.transform = 'none'; this.io.unobserve(t); setTimeout(() => { t.style.transition = ''; t.style.transform = ''; t.style.opacity = ''; }, 1000); } }), { rootMargin: '0px 0px -6% 0px' });
+      els.forEach(el => this.io.observe(el));
+    }, 350);
+  }
+  componentDidMount() {
+    this.pageReveal();
+    this.onResize = () => this.setState({ w: window.innerWidth }, () => { if (this.state.w >= 1080 && this.state.open) this.close(); });
+    this.onKey = (e) => { if (e.key === 'Escape' && this.state.open) this.close(); };
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('keydown', this.onKey);
+    if (this.state.loading) {
+      this.t1 = setTimeout(() => {
+        this.setState({ fade: true });
+        window.__dbLoaderActive = false;
+        window.dispatchEvent(new Event('db:reveal'));
+        try { sessionStorage.setItem('db_loader_seen', '1'); } catch (e) {}
+        this.t2 = setTimeout(() => this.setState({ loading: false }), 460);
+      }, 2000);
+    }
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('keydown', this.onKey);
+    clearTimeout(this.t1); clearTimeout(this.t2); clearTimeout(this.tReveal); clearTimeout(this.tSec); this.io && this.io.disconnect();
+    document.body.style.overflow = '';
+  }
+  close = () => { document.body.style.overflow = ''; this.setState({ open: false }); };
+  toggle = () => {
+    const open = !this.state.open;
+    document.body.style.overflow = open ? 'hidden' : '';
+    this.setState({ open }, () => {
+      if (open) { const a = document.querySelector('#menu-movil a'); a && a.focus(); }
+    });
+  };
+  renderVals() {
+    const cur = this.props.current || '';
+    const L = [
+      ['servicios', 'Servicios', 'Servicios.dc.html'],
+      ['portfolio', 'Portfolio', 'Portfolio.dc.html'],
+      ['invitaciones', 'Invitaciones', 'Invitaciones.dc.html'],
+      ['blog', 'Blog', 'Blog.dc.html'],
+      ['recomendaciones', 'Recomendaciones', 'Recursos.dc.html'],
+      ['nosotros', 'Nosotros', 'Nosotros.dc.html'],
+      ['maker', 'Maker', 'Maker.dc.html', true]
+    ];
+    const desk = this.state.w >= 1080;
+    return {
+      desk, mobile: !desk,
+      openStr: this.state.open ? 'true' : 'false',
+      menuLabel: this.state.open ? 'Cerrar menú' : 'Abrir menú',
+      bar1: this.state.open ? 'translateY(4px) rotate(45deg)' : 'none',
+      bar2: this.state.open ? 'translateY(-4px) rotate(-45deg)' : 'none',
+      toggle: this.toggle, close: this.close,
+      links: L.map(([k, label, href, soon]) => ({
+        label, href, soon: !!soon,
+        aria: k === cur ? 'page' : undefined,
+        color: k === cur ? '#F1F1F1' : '#AEB3C0',
+        bar: k === cur ? '#85A840' : 'transparent'
+      })),
+      loading: this.state.loading,
+      loaderOpacity: this.state.fade ? 0 : 1,
+      loaderMark: React.createElement('img', {
+        src: 'assets/duskyberry-mark.png', alt: '', width: 88, height: 88,
+        style: { width: 88, height: 88, display: 'block', animation: 'dbspin 1.4s cubic-bezier(.65,.05,.35,.95) infinite' }
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
