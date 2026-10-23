@@ -12,70 +12,69 @@
 - Duskyberry Maker: plataforma para crear invitaciones web, en desarrollo (aún no disponible).
 
 ## Servicios
-- [Diseño visual](https://DOMINIO-PENDIENTE.com/Servicio-diseno-visual.dc.html): posts, carruseles, stories, campañas y sistemas visuales para redes.
-- [Video y contenido audiovisual](https://DOMINIO-PENDIENTE.com/Servicio-video.dc.html): reels, TikTok, Shorts, videos promocionales, motion graphics y thumbnails (edición; la grabación presencial no se incluye por defecto).
-- [Web y experiencias digitales](https://DOMINIO-PENDIENTE.com/Servicio-web.dc.html): landing pages, sitios para negocios, micrositios y prototipos.
-- [Presentaciones](https://DOMINIO-PENDIENTE.com/Servicio-presentaciones.dc.html): pitch decks, presentaciones comerciales, corporativas y educativas.
-- [Mascotas para marcas](https://DOMINIO-PENDIENTE.com/Servicio-mascotas.dc.html): diseño de personajes y mascotas originales.
-- [Invitaciones web](https://DOMINIO-PENDIENTE.com/Invitaciones.dc.html): bodas, XV años, cumpleaños, aniversarios y baby showers.
+- [Diseño visual](https://duskyberry.com/Servicio-diseno-visual.dc.html): posts, carruseles, stories, campañas y sistemas visuales para redes.
+- [Web y experiencias digitales](https://duskyberry.com/Servicio-web.dc.html): landing pages, sitios para negocios, micrositios y prototipos.
+- [Presentaciones](https://duskyberry.com/Servicio-presentaciones.dc.html): pitch decks, presentaciones comerciales, corporativas y educativas.
+- [Mascotas para marcas](https://duskyberry.com/Servicio-mascotas.dc.html): diseño de personajes y mascotas originales.
+- [Invitaciones web](https://duskyberry.com/Invitaciones.dc.html): bodas, XV años, cumpleaños, aniversarios y baby showers.
 
 ## Páginas principales
-- [Inicio](https://DOMINIO-PENDIENTE.com/Inicio.dc.html)
-- [Solicitar cotización](https://DOMINIO-PENDIENTE.com/Cotizacion.dc.html)
-- [Muestra gratuita](https://DOMINIO-PENDIENTE.com/Muestra-gratuita.dc.html)
-- [Portfolio (conceptos con marcas ficticias)](https://DOMINIO-PENDIENTE.com/Portfolio.dc.html)
-- [Quiénes somos](https://DOMINIO-PENDIENTE.com/Nosotros.dc.html)
-- [Recomendaciones Duskyberry](https://DOMINIO-PENDIENTE.com/Recursos.dc.html)
-- [Duskyberry Maker](https://DOMINIO-PENDIENTE.com/Maker.dc.html)
+- [Inicio](https://duskyberry.com/Inicio.dc.html)
+- [Solicitar cotización](https://duskyberry.com/Cotizacion.dc.html)
+- [Muestra gratuita](https://duskyberry.com/Muestra-gratuita.dc.html)
+- [Portfolio (conceptos con marcas ficticias)](https://duskyberry.com/Portfolio.dc.html)
+- [Quiénes somos](https://duskyberry.com/Nosotros.dc.html)
+- [Recomendaciones Duskyberry](https://duskyberry.com/Recursos.dc.html)
+- [Duskyberry Maker](https://duskyberry.com/Maker.dc.html)
 
 ## Blog
 
 ### Creadores de contenido
-- [¿Cómo convertirse en influencer sin morir en el intento?](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=como-convertirse-en-influencer)
+- [¿Cómo convertirse en influencer sin morir en el intento?](https://duskyberry.com/Blog.dc.html?a=como-convertirse-en-influencer)
 
 ### Emprendimiento
-- [¿Aún no aceptas tarjeta en tu negocio? Esto es lo que te estás perdiendo](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=aun-no-aceptas-tarjeta-en-tu-negocio)
-- [Emprender una imprenta en 2026: el negocio que cabe en una mesa (y lo que nadie te cuenta)](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=emprender-una-imprenta-en-2026)
-- [Help! Quiero emprender pero no sé qué](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=help-quiero-emprender-pero-no-se-que)
-- [¿Por qué los negocios de comida son de los más rentables?](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=por-que-los-negocios-de-comida-son-rentables)
+- [¿Aún no aceptas tarjeta en tu negocio? Esto es lo que te estás perdiendo](https://duskyberry.com/Blog.dc.html?a=aun-no-aceptas-tarjeta-en-tu-negocio)
+- [Emprender una imprenta en 2026: el negocio que cabe en una mesa (y lo que nadie te cuenta)](https://duskyberry.com/Blog.dc.html?a=emprender-una-imprenta-en-2026)
+- [Help! Quiero emprender pero no sé qué](https://duskyberry.com/Blog.dc.html?a=help-quiero-emprender-pero-no-se-que)
+- [¿Por qué los negocios de comida son de los más rentables?](https://duskyberry.com/Blog.dc.html?a=por-que-los-negocios-de-comida-son-rentables)
 
 ### Productividad
-- [Productividad sin culpa: trabaja menos horas y avanza más](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=productividad-sin-culpa)
-- [Tomar apuntes no es cosa del pasado: escribir es la forma más rápida de pensar mejor](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=tomar-apuntes-te-ayuda-a-pensar)
-- [El poder de tener un lugar solo para trabajar (tu cabeza sabe la diferencia)](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=beneficios-espacio-designado-para-trabajar)
-- [Mi agenda, mi mejor amiga: cómo organizar tu semana sin volverte esclavo del calendario](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=mi-agenda-mi-mejor-amiga)
+- [Productividad sin culpa: trabaja menos horas y avanza más](https://duskyberry.com/Blog.dc.html?a=productividad-sin-culpa)
+- [Tomar apuntes no es cosa del pasado: escribir es la forma más rápida de pensar mejor](https://duskyberry.com/Blog.dc.html?a=tomar-apuntes-te-ayuda-a-pensar)
+- [El poder de tener un lugar solo para trabajar (tu cabeza sabe la diferencia)](https://duskyberry.com/Blog.dc.html?a=beneficios-espacio-designado-para-trabajar)
+- [Mi agenda, mi mejor amiga: cómo organizar tu semana sin volverte esclavo del calendario](https://duskyberry.com/Blog.dc.html?a=mi-agenda-mi-mejor-amiga)
 
 ### Equipo y tecnología
-- [La laptop correcta para tu negocio: cómo elegir sin pagar de más ni quedarte corto](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=como-elegir-laptop-para-tu-negocio)
+- [La laptop correcta para tu negocio: cómo elegir sin pagar de más ni quedarte corto](https://duskyberry.com/Blog.dc.html?a=como-elegir-laptop-para-tu-negocio)
 
 ### Carreras creativas
-- [Trabajos creativos y digitales para el 2026-2027: dónde está la oportunidad](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=trabajos-creativos-2026-2027)
+- [Trabajos creativos y digitales para el 2026-2027: dónde está la oportunidad](https://duskyberry.com/Blog.dc.html?a=trabajos-creativos-2026-2027)
 
 ### Creatividad
-- [Tus ideas fluyen mejor cuando dejas de perseguirlas](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=tus-ideas-fluyen-mejor-cuando)
+- [Tus ideas fluyen mejor cuando dejas de perseguirlas](https://duskyberry.com/Blog.dc.html?a=tus-ideas-fluyen-mejor-cuando)
 
 ### Espacio de trabajo
-- [Monta tu oficina en un fin de semana: la guía para trabajar como profesional desde casa](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=monta-tu-oficina-en-casa)
+- [Monta tu oficina en un fin de semana: la guía para trabajar como profesional desde casa](https://duskyberry.com/Blog.dc.html?a=monta-tu-oficina-en-casa)
 
 ### Fotografía
-- [Por qué la fotografía nunca pasará de moda (aunque todos tengamos una cámara en el bolsillo)](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=por-que-la-fotografia-nunca-pasara-de-moda)
+- [Por qué la fotografía nunca pasará de moda (aunque todos tengamos una cámara en el bolsillo)](https://duskyberry.com/Blog.dc.html?a=por-que-la-fotografia-nunca-pasara-de-moda)
 
 ### IA y creatividad
-- [Cómo utilizar inteligencia artificial en el diseño sin perder la personalidad de marca](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=inteligencia-artificial-diseno-personalidad-de-marca)
+- [Cómo utilizar inteligencia artificial en el diseño sin perder la personalidad de marca](https://duskyberry.com/Blog.dc.html?a=inteligencia-artificial-diseno-personalidad-de-marca)
 
 ### Diseño
-- [Los errores de diseño que hacen que una marca parezca menos profesional](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=errores-de-diseno-marca-menos-profesional)
+- [Los errores de diseño que hacen que una marca parezca menos profesional](https://duskyberry.com/Blog.dc.html?a=errores-de-diseno-marca-menos-profesional)
 
 ### Estrategia de contenido
-- [Tu negocio no necesita publicar más: necesita una estrategia de contenido](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=tu-negocio-no-necesita-publicar-mas)
+- [Tu negocio no necesita publicar más: necesita una estrategia de contenido](https://duskyberry.com/Blog.dc.html?a=tu-negocio-no-necesita-publicar-mas)
 
 ### Estrategia de marca
-- [Cómo hacer que tu marca destaque entre cientos de competidores](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=como-hacer-que-tu-marca-destaque)
+- [Cómo hacer que tu marca destaque entre cientos de competidores](https://duskyberry.com/Blog.dc.html?a=como-hacer-que-tu-marca-destaque)
 
 ### Bienestar
-- [Manejo del estrés: cómo bajar el volumen cuando todo se siente urgente](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=manejo-del-estres)
-- [Descansar también es ser productivo](https://DOMINIO-PENDIENTE.com/Blog.dc.html?a=descansar-tambien-es-ser-productivo)
+- [Manejo del estrés: cómo bajar el volumen cuando todo se siente urgente](https://duskyberry.com/Blog.dc.html?a=manejo-del-estres)
+- [Descansar también es ser productivo](https://duskyberry.com/Blog.dc.html?a=descansar-tambien-es-ser-productivo)
 
 ## Legal
-- [Aviso de privacidad](https://DOMINIO-PENDIENTE.com/Aviso-de-privacidad.dc.html)
-- [Términos y condiciones](https://DOMINIO-PENDIENTE.com/Terminos.dc.html)
+- [Aviso de privacidad](https://duskyberry.com/Aviso-de-privacidad.dc.html)
+- [Términos y condiciones](https://duskyberry.com/Terminos.dc.html)

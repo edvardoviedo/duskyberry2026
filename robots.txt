@@ -1,5 +1,4 @@
 # Duskyberry · robots.txt
-# Reemplaza DOMINIO-PENDIENTE.com por el dominio oficial antes de publicar.
 User-agent: *
 Allow: /
 Disallow: /404.dc.html
@@ -24,4 +23,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://DOMINIO-PENDIENTE.com/sitemap.xml
+Sitemap: https://duskyberry.com/sitemap.xml

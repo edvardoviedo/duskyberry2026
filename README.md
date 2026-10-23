@@ -34,7 +34,6 @@ Funciona en cualquier hosting estático: GitHub Pages, Netlify, Vercel o Cloudfl
 
 ## Antes de publicar
 
-1. Define el dominio oficial en `site-config.js` (`domain`) y reemplázalo en `sitemap.xml`, `robots.txt` y `llms.txt`.
 2. Revisa con un abogado el aviso de privacidad y los términos y condiciones.
 3. Confirma los enlaces de productos en `data/productos.js`.
 4. Agrega una imagen Open Graph (1200×630) en `assets/` y su ruta en `seo.js`.
