@@ -18,7 +18,7 @@
     var title = document.title;
     var descEl = document.querySelector('meta[name="description"]');
     var desc = descEl ? descEl.content : '';
-    var img = abs('assets/duskyberry-logo.png');
+    var img = abs('assets/og-image.jpg');
     var isArticle = !!document.getElementById('ld-article');
     if (url) link('canonical', url);
     meta('name', 'theme-color', '#000000');
@@ -28,7 +28,7 @@
     meta('property', 'og:title', title);
     meta('property', 'og:description', desc);
     meta('property', 'og:image', img);
-    meta('property', 'og:image:alt', 'Logotipo de Duskyberry Studio');
+    meta('property', 'og:image:alt', 'aloha! · Duskyberry, agencia creativa');
     if (url) meta('property', 'og:url', url);
     meta('name', 'twitter:card', 'summary_large_image');
     meta('name', 'twitter:title', title);

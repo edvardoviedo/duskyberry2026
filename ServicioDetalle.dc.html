@@ -104,6 +104,12 @@
       </div>
     </div>
   </section></sc-if>
+  <sc-if value="{{ showDiscover }}" hint-placeholder-val="{{ true }}"><section id="ejemplos" style="background:#1E222E;color:#F1F1F1;padding:clamp(72px,10vw,140px) 0;scroll-margin-top:72px">
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px">
+      <h2 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(32px,4.6vw,60px);line-height:1.02;letter-spacing:-0.04em;text-wrap:balance">Descubre nuestro trabajo</h2>
+      <a href="Portfolio.dc.html" style="display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 32px;border-radius:999px;background:#85A840;color:#000000;font-family:Poppins, sans-serif;font-size:16px;font-weight:600;text-decoration:none;transition:background .2s ease, transform .2s ease" style-hover="background:#9BBF52;color:#000000" style-active="transform:scale(.97)">Ir a portfolio</a>
+    </div>
+  </section></sc-if>
 
   <section style="background:#F1F1F1;color:#000000;padding:clamp(72px,10vw,140px) 0">
     <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:56px clamp(40px,6vw,96px)">
@@ -237,7 +243,7 @@ class Component extends DCLogic {
       needs:['Descripción de tu marca y tu público','Ideas o referencias de personalidad','Dónde usarás la mascota (redes, empaques, local)','Recursos de marca','Personajes que te gusten como referencia'],
       faq:[{q:'¿La mascota será exclusiva de mi marca?',a:'La exclusividad y los derechos de uso se acuerdan expresamente en la cotización.'},{q:'¿Qué estilos pueden hacer?',a:'Trabajamos personajes 2D en distintos estilos —cartoon, chibi, ilustración plana— según la personalidad de tu marca.'},{q:'¿Pueden animarla?',a:'Podemos explorar animaciones para redes como parte del alcance; coméntalo al cotizar.'},{q:'¿Cuánto cuesta?',a:'Depende de la exploración, el número de expresiones y poses y las aplicaciones. Te enviamos una cotización a la medida.'}],
       ctaTitle:'Dale a tu marca alguien que la represente.' },
-    invitaciones: { name:'Invitaciones web', q:'invitaciones', italic:true, eyebrow:'Invitaciones web · nuestra especialidad de origen', title:'Momentos extraordinarios merecen una invitación a su altura.',
+    invitaciones: { name:'Invitaciones web', q:'invitaciones', italic:true, eyebrow:'Invitaciones web', title:'Momentos extraordinarios merecen una invitación a su altura.',
       lead:'Invitaciones web personalizadas para bodas, XV años, cumpleaños, aniversarios, baby showers y otros eventos.',
       intro:'Antes de ser una agencia creativa integral, Duskyberry se especializó en invitaciones web. Sabemos que no es solo un enlace: es la primera impresión de tu celebración. Diseñamos cada invitación según el tono del evento y la personalizamos con los recursos que elijas, dentro del alcance contratado.',
       includes:['Bodas','XV años','Cumpleaños','Aniversarios','Baby showers','Otros eventos personales o sociales'],
@@ -256,7 +262,7 @@ class Component extends DCLogic {
     return {
       s: { ...s, exNote: s.slug === 'invitaciones' || this.props.slug === 'invitaciones' ? 'proyectos realizados por Duskyberry' : 'conceptos de muestra · marcas ficticias', delivTitle: s.delivTitle || 'Entregables habituales', examples: s.examples.map(e => ({ ...e, phone: e.phone || '', img: e.img || '', capAlign: e.phone ? 'center' : 'left', comp: !e.img && !e.phone, alt: e.alt || (e.cap + ' (concepto)') })) },
       bold: !s.italic, italic: !!s.italic,
-      showExamples: this.props.slug !== 'invitaciones',
+      showExamples: this.props.slug === 'mascotas', showDiscover: this.props.slug !== 'mascotas',
       secLabel: this.props.slug === 'invitaciones' ? 'Pedir ejemplo' : 'Ver ejemplos',
       secHref: this.props.slug === 'invitaciones' ? 'https://wa.me/528442934546?text=' + encodeURIComponent('Hola, Duskyberry. Me gustaría ver ejemplos de invitaciones web.') : '#ejemplos',
       secTarget: this.props.slug === 'invitaciones' ? '_blank' : '_self',
