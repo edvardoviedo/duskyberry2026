@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style data-nox="1">html,body{overflow-x:clip;max-width:100%;overscroll-behavior-x:none}@supports not (overflow:clip){html,body{overflow-x:hidden}}</style>
+<title>Recomendaciones Duskyberry · Herramientas para crear y emprender</title>
+<meta name="description" content="Equipo de cómputo, fotografía, impresión, personalización y escritorio: las herramientas que el equipo Duskyberry recomienda para crear y hacer crecer tu marca.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/duskyberry-mark.png">
+<link rel="apple-touch-icon" href="assets/duskyberry-mark.png">
+<script src="site-config.js"></script>
+<script src="seo.js" defer></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script src="data/productos.js"></script>
+<style>html{-webkit-text-size-adjust:100%}body{margin:0;background:#000000;color:#F1F1F1}a{color:#85A840}a:hover{color:#9BBF52}:focus-visible{outline:2px solid #0CC0DF;outline-offset:3px}@media (prefers-reduced-motion: reduce){*{transition-duration:.001ms!important}}</style>
+</helmet>
+<dc-import name="SiteHeader" current="recomendaciones" hint-size="100%,72px"></dc-import>
+<main id="contenido" style="background:#000000;color:#F1F1F1;padding:clamp(40px,6vw,96px) 0 clamp(80px,10vw,140px)">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:36px">
+    <nav aria-label="Ruta de navegación" style="font-family:Poppins, sans-serif;font-size:13px;color:#8A90A0;display:flex;gap:8px"><a href="Inicio.dc.html" style="color:#AEB3C0;text-decoration:none">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Recomendaciones Duskyberry</span></nav>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px 64px;align-items:end">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <p style="margin:0;font-family:Poppins, sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#85A840">Recomendaciones Duskyberry</p>
+        <h1 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(40px,6vw,88px);line-height:.98;letter-spacing:-0.045em;text-wrap:balance">Las herramientas que vale la pena tener cerca.</h1>
+      </div>
+      <p style="margin:0;font-family:Poppins, sans-serif;font-size:17px;line-height:1.6;color:#B8BCC8;max-width:520px;text-wrap:pretty">Equipo para crear contenido, montar tu espacio de trabajo y emprender con tu propio taller de personalización. Una selección hecha con criterio de estudio creativo.</p>
+    </div>
+    <sc-if value="{{ fDesk }}" hint-placeholder-val="{{ true }}"><div role="group" aria-label="Filtrar por categoría" style="display:flex;flex-wrap:wrap;gap:8px">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+        <button type="button" onClick="{{ f.pick }}" aria-pressed="{{ f.pressed }}" style="min-height:44px;padding:0 18px;border-radius:999px;border:1px solid {{ f.bd }};background:{{ f.bg }};color:{{ f.fg }};font-family:Poppins, sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:background .2s ease, color .2s ease">{{ f.label }} <span style="opacity:.55">{{ f.count }}</span></button>
+      </sc-for>
+    </div></sc-if>
+    <sc-if value="{{ fMob }}" hint-placeholder-val="{{ false }}">
+      <label style="position:relative;display:flex;flex-direction:column;gap:8px;max-width:420px">
+        <span style="font-family:Poppins, sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#85A840">Categoría</span>
+        <select value="{{ filterVal }}" onChange="{{ onFilterSelect }}" aria-label="Filtrar por categoría" style="appearance:none;-webkit-appearance:none;width:100%;min-height:52px;padding:0 48px 0 18px;border-radius:999px;border:1px solid rgba(241,241,241,.28);background:#1E222E;color:#F1F1F1;font-family:Poppins, sans-serif;font-size:16px;font-weight:500;cursor:pointer">
+          <sc-for list="{{ filters }}" as="o" hint-placeholder-count="5"><option value="{{ o.val }}">{{ o.optLabel }}</option></sc-for>
+        </select>
+        <span aria-hidden="true" style="position:absolute;right:20px;bottom:18px;width:9px;height:9px;border-right:2px solid #85A840;border-bottom:2px solid #85A840;transform:rotate(45deg);pointer-events:none"></span>
+      </label>
+    </sc-if>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:clamp(28px,3vw,40px) 24px">
+      <sc-for list="{{ items }}" as="p" hint-placeholder-count="8">
+        <article style="display:flex;flex-direction:column;gap:12px;min-width:0">
+          <div style="position:relative;aspect-ratio:4 / 3;border-radius:6px;overflow:hidden;background:#FFFFFF">
+            <img src="{{ p.img }}" alt="{{ p.name }}" width="600" height="600" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;padding:14% 22%;box-sizing:border-box;transition:transform .4s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.03)">
+            <sc-if value="{{ p.tag }}" hint-placeholder-val="{{ false }}">
+              <span style="position:absolute;left:12px;top:12px;padding:5px 10px;border-radius:999px;background:#000000;color:#F1F1F1;font-family:Poppins, sans-serif;font-size:12px;font-weight:600">{{ p.tag }}</span>
+            </sc-if>
+          </div>
+          <span style="font-family:Poppins, sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#85A840">{{ p.catLabel }}</span>
+          <h2 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:19px;line-height:1.22;letter-spacing:-0.02em;text-wrap:pretty">{{ p.name }}</h2>
+          <p style="margin:0;font-family:Poppins, sans-serif;font-size:15px;line-height:1.6;color:#AEB3C0;flex:1">{{ p.desc }}</p>
+          <a href="{{ p.url }}" target="_blank" rel="sponsored noopener noreferrer" style="display:flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;border:1px solid #85A840;color:#F1F1F1;font-family:Poppins, sans-serif;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease, color .2s ease" style-hover="background:#85A840;color:#000000">Descubrir mejor precio</a>
+        </article>
+      </sc-for>
+    </div>
+    <div style="margin-top:16px;padding:clamp(28px,4vw,48px);background:#1E222E;border-radius:8px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px">
+      <div style="display:flex;flex-direction:column;gap:8px;max-width:640px">
+        <h2 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing:-0.035em">¿No está lo que buscas?</h2>
+        <p style="margin:0;font-family:Poppins, sans-serif;font-size:17px;line-height:1.6;color:#C2C6D0">Aquí encontrarás las mejores ofertas y promociones.</p>
+      </div>
+      <a href="https://meli.la/2ZBAn5N" target="_blank" rel="sponsored noopener noreferrer" style="display:inline-flex;align-items:center;min-height:56px;padding:0 28px;border-radius:999px;background:#85A840;color:#000000;font-family:Poppins, sans-serif;font-size:16px;font-weight:600;text-decoration:none" style-hover="background:#9BBF52;color:#000000">Ver ofertas y promociones</a>
+    </div>
+    <p style="margin:0;font-family:Poppins, sans-serif;font-size:11px;color:#F1F1F1;opacity:.5">Esta sección puede contener enlaces externos.</p>
+  </div>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: window.innerWidth, filter: 'todos' };
+  componentDidMount() {
+    this.onFW = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this.onFW); if (!window.DUSKY_PRODUCTS) this.iv = setInterval(() => { if (window.DUSKY_PRODUCTS) { clearInterval(this.iv); this.forceUpdate(); } }, 100); }
+  componentWillUnmount() { clearInterval(this.iv); }
+  renderVals() {
+    const all = (window.DUSKY_PRODUCTS || []).filter(p => /^https:\/\//i.test(p.url || ''));
+    const cats = [['todos', 'Todos']].concat((window.DUSKY_CATS || []).filter(([k]) => all.some(p => p.cat === k)));
+    const label = Object.fromEntries(window.DUSKY_CATS || []), f = this.state.filter;
+    return {
+      fMob: this.state.w < 760, fDesk: !(this.state.w < 760), filterVal: this.state.filter, onFilterSelect: (e) => this.setState({ filter: e.target.value }),
+      filters: cats.map(([k, l]) => ({ label: l, count: k === 'todos' ? all.length : all.filter(p => p.cat === k).length, pressed: f === k ? 'true' : 'false', bg: f === k ? '#F1F1F1' : 'transparent', fg: f === k ? '#000000' : '#E2E4EA', bd: f === k ? '#F1F1F1' : 'rgba(241,241,241,.22)', pick: () => this.setState({ filter: k }), val: k, optLabel: l + ' (' + (k === 'todos' ? all.length : all.filter(p => p.cat === k).length) + ')' })),
+      items: all.filter(p => f === 'todos' || p.cat === f).map(p => ({ ...p, catLabel: label[p.cat] || '', tag: p.tag || '' }))
+    };
+  }
+}
+</script>
+</body>
+</html>
