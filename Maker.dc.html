@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style data-preblack="1">html,body{background:#000000;margin:0}x-dc{display:none}html:not(.db-ready) body::after{content:"";position:fixed;top:0;left:0;right:0;bottom:0;background:#000000;z-index:2147483646}</style>
+<script>setTimeout(function(){document.documentElement.classList.add("db-ready")},4000)</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style data-nox="1">html,body{overflow-x:clip;max-width:100%;overscroll-behavior-x:none}@supports not (overflow:clip){html,body{overflow-x:hidden}}</style>
+<title>Duskyberry Maker · Próximamente</title>
+<meta name="description" content="Duskyberry Maker está en desarrollo: crea y envía invitaciones mágicas en minutos. Próximamente.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/duskyberry-mark.png">
+<link rel="apple-touch-icon" href="assets/duskyberry-mark.png">
+<script src="site-config.js"></script>
+<script src="seo.js" defer></script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0;background:#000000;color:#F1F1F1}a{color:#85A840}a:hover{color:#9BBF52}:focus-visible{outline:2px solid #0CC0DF;outline-offset:3px}</style>
+</helmet>
+<dc-import name="SiteHeader" current="maker" hint-size="100%,72px"></dc-import>
+<main id="contenido" style="position:relative;background:#000000;color:#F1F1F1;min-height:calc(100vh - 72px);min-height:calc(100svh - 72px);display:flex;align-items:center;isolation:isolate">
+  <canvas ref="{{ canvasRef }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:-1"></canvas>
+  <div style="width:100%;max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,120px) clamp(20px,4vw,48px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px">
+    <span style="font-family:Poppins, sans-serif;font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#0CC0DF;border:1px solid rgba(12,192,223,.5);border-radius:999px;padding:7px 16px">Próximamente</span>
+    <p style="margin:0;display:flex;align-items:center;gap:10px;font-family:Montserrat, sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.02em;color:#C9CDD6"><img src="assets/duskyberry-mark.png" alt="" width="28" height="28" style="width:28px;height:28px">Duskyberry Maker</p>
+    <h1 style="margin:0;max-width:980px;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(44px,8vw,120px);line-height:.95;letter-spacing:-0.05em;text-wrap:balance">Estamos creando algo <span style="color:#85A840">mágico.</span></h1>
+    <p style="margin:0;font-family:Montserrat, sans-serif;font-weight:300;font-style:italic;font-size:clamp(22px,2.6vw,32px);line-height:1.25;color:#F1F1F1">Crea y envía invitaciones mágicas en minutos.</p>
+    <p style="margin:0;max-width:560px;font-family:Poppins, sans-serif;font-size:17px;line-height:1.65;color:#B8BCC8;text-wrap:pretty">Duskyberry Maker está en desarrollo. Estamos trabajando para que diseñar una invitación web personal, hermosa y memorable sea más fácil que nunca.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding-top:8px">
+      <a href="Inicio.dc.html" style="display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;background:#F1F1F1;color:#000000;font-family:Poppins, sans-serif;font-size:16px;font-weight:600;text-decoration:none" style-hover="background:#FFFFFF;color:#000000">Regresar a Duskyberry</a>
+      <a href="Invitaciones.dc.html" style="display:inline-flex;align-items:center;min-height:56px;padding:0 26px;border-radius:999px;border:1px solid rgba(241,241,241,.3);color:#F1F1F1;font-family:Poppins, sans-serif;font-size:16px;font-weight:500;text-decoration:none" style-hover="border-color:#F1F1F1;color:#F1F1F1">Explora invitaciones personalizadas</a>
+    </div>
+    <p style="margin:12px 0 0;max-width:none;font-family:Poppins, sans-serif;font-size:13px;line-height:1.6;color:#8A90A0">Mientras tanto, nuestro equipo diseña invitaciones web a la medida de tu celebración.</p>
+  </div>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  canvasRef = React.createRef();
+  componentDidMount() {
+    const c = this.canvasRef.current; if (!c) return;
+    const ctx = c.getContext('2d');
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const cols = ['133,168,64', '12,192,223', '241,241,241'];
+    let W = 0, H = 0, dots = [];
+    const setup = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = c.clientWidth; H = c.clientHeight;
+      c.width = W * dpr; c.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const n = Math.round(Math.min(110, Math.max(40, W * H / 14000)));
+      dots = Array.from({ length: n }, (_, i) => ({
+        x: Math.random() * W, y: Math.random() * H, r: 0.8 + Math.random() * 1.8,
+        c: cols[i % 3 === 2 && Math.random() < .5 ? 0 : i % 3], a: .25 + Math.random() * .5,
+        sx: (Math.random() - .5) * .12, sy: -.04 - Math.random() * .12, ph: Math.random() * 6.28, sp: .4 + Math.random() * .8
+      }));
+    };
+    const draw = (t) => {
+      ctx.clearRect(0, 0, W, H);
+      for (const d of dots) {
+        if (!reduce) {
+          d.x += d.sx + Math.sin(t / 2400 + d.ph) * .08; d.y += d.sy;
+          if (d.y < -6) { d.y = H + 6; d.x = Math.random() * W; }
+          if (d.x < -6) d.x = W + 6; if (d.x > W + 6) d.x = -6;
+        }
+        const tw = reduce ? 1 : .55 + .45 * Math.sin(t / 1000 * d.sp + d.ph);
+        ctx.beginPath(); ctx.arc(d.x, d.y, d.r, 0, 6.2832);
+        ctx.fillStyle = 'rgba(' + d.c + ',' + (d.a * tw).toFixed(3) + ')'; ctx.fill();
+      }
+      if (!reduce) this.raf = requestAnimationFrame(draw);
+    };
+    setup(); draw(0);
+    this.onResize = () => { setup(); if (reduce) draw(0); };
+    window.addEventListener('resize', this.onResize);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); window.removeEventListener('resize', this.onResize); }
+  renderVals() { return { canvasRef: this.canvasRef }; }
+}
+</script>
+</body>
+</html>

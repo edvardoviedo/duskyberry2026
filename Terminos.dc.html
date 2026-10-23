@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style data-preblack="1">html,body{background:#000000;margin:0}x-dc{display:none}html:not(.db-ready) body::after{content:"";position:fixed;top:0;left:0;right:0;bottom:0;background:#000000;z-index:2147483646}</style>
+<script>setTimeout(function(){document.documentElement.classList.add("db-ready")},4000)</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style data-nox="1">html,body{overflow-x:clip;max-width:100%;overscroll-behavior-x:none}@supports not (overflow:clip){html,body{overflow-x:hidden}}</style>
+<title>Términos y condiciones · Duskyberry</title>
+<meta name="description" content="Términos y condiciones de Duskyberry: cotizaciones, anticipo del 50%, revisiones, entregables, propiedad intelectual y uso del sitio.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/duskyberry-mark.png">
+<script src="site-config.js"></script>
+<script src="seo.js" defer></script>
+<style>html{-webkit-text-size-adjust:100%}body{margin:0;background:#F1F1F1;color:#000000}a{color:#4A6420}a:hover{color:#000000}:focus-visible{outline:2px solid #0CC0DF;outline-offset:3px}</style>
+</helmet>
+<dc-import name="SiteHeader" current="" hint-size="100%,72px"></dc-import>
+<main id="contenido" style="background:#F1F1F1;color:#000000;padding:clamp(48px,7vw,104px) 0 clamp(80px,10vw,140px)">
+  <article style="max-width:760px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:28px;font-family:Poppins, sans-serif;font-size:16px;line-height:1.7;color:#2A2F3C">
+    <nav aria-label="Ruta de navegación" style="font-size:13px;color:#4A5060;display:flex;gap:8px"><a href="Inicio.dc.html" style="color:#4A5060;text-decoration:none">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Términos y condiciones</span></nav>
+    <h1 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:-0.045em;color:#000000">Términos y condiciones</h1>
+    <p style="margin:0;font-size:18px;color:#000000">Queremos que trabajar con nosotros sea claro desde el principio. Estos son los acuerdos básicos, explicados de forma sencilla.</p>
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="12">
+      <section style="display:flex;flex-direction:column;gap:10px;padding-top:24px;border-top:1px solid rgba(0,0,0,.12)">
+        <h2 style="margin:0;font-family:Montserrat, sans-serif;font-weight:800;font-size:22px;letter-spacing:-0.03em;color:#000000">{{ s.h }}</h2>
+        <p style="margin:0">{{ s.p }}</p>
+      </section>
+    </sc-for>
+    <p style="margin:0;padding-top:20px;border-top:1px solid rgba(0,0,0,.14);font-size:14px;color:#4A5060">Consulta también nuestro <a href="Aviso-de-privacidad.dc.html">aviso de privacidad</a>. Última actualización: 22 de octubre de 2026.</p>
+  </article>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  S = [
+    ['1. Quiénes somos', 'Duskyberry es una agencia creativa con sede en México que ofrece servicios de diseño visual, video, web, presentaciones, mascotas para marcas e invitaciones web, para clientes de México y de otros países.'],
+    ['2. Uso del sitio', 'Este sitio presenta nuestros servicios, ejemplos de trabajo, artículos y recomendaciones. Al usarlo aceptas estos términos. Las piezas marcadas como concepto o muestra son demostrativas y no representan a clientes reales.'],
+    ['3. Cotizaciones', 'Cada proyecto se cotiza de forma personalizada según su alcance, complejidad y número de piezas. Enviar una solicitud no te obliga a contratar. La cotización indica qué incluye el proyecto, los entregables, las rondas de revisión y los tiempos estimados.'],
+    ['4. Anticipo del 50%', 'Para iniciar cualquier servicio solicitamos un anticipo del 50% del total cotizado. El 50% restante se liquida al terminar el proyecto, antes de la entrega de los archivos finales, salvo que se acuerde otra forma de pago por escrito.'],
+    ['5. Inicio y tiempos', 'El proyecto comienza cuando recibimos el anticipo y la información necesaria. Los tiempos de entrega se cuentan a partir de ese momento y pueden ajustarse si hay retrasos en la entrega de materiales, respuestas o aprobaciones.'],
+    ['6. Revisiones y cambios', 'Cada cotización incluye un número de rondas de revisión. Los cambios adicionales o las modificaciones que alteren el alcance original se cotizan aparte antes de realizarse.'],
+    ['7. Entregables', 'Entregamos los archivos en los formatos acordados en la cotización. Los archivos editables o fuente solo se entregan si así se especifica.'],
+    ['8. Propiedad intelectual', 'Una vez liquidado el total del proyecto, el cliente puede usar los diseños finales para los fines acordados. Los bocetos, propuestas no elegidas y archivos de trabajo siguen siendo de Duskyberry. Las licencias especiales, como la exclusividad de una mascota, se definen en la cotización.'],
+    ['9. Recursos de terceros', 'Algunos proyectos pueden usar tipografías, imágenes o música de terceros con sus propias licencias. Te avisaremos cuando un recurso requiera una licencia adicional.'],
+    ['10. Portfolio', 'Podemos mostrar los proyectos realizados en nuestro portfolio y redes sociales. Si prefieres que tu proyecto sea confidencial, indícalo antes de comenzar.'],
+    ['11. Cancelaciones', 'Si decides cancelar un proyecto ya iniciado, el anticipo cubre el trabajo realizado hasta ese momento y no es reembolsable.'],
+    ['12. Muestra gratuita', 'La muestra gratuita consiste en tres propuestas de single post. Está sujeta a evaluación y selección, no incluye archivos editables ni publicación, y no implica la obligación de contratar.'],
+    ['13. Duskyberry Maker', 'Duskyberry Maker es una plataforma en desarrollo y todavía no está disponible.'],
+    ['14. Enlaces externos', 'El sitio incluye enlaces a otras páginas, como tiendas en línea o redes sociales. No somos responsables de su contenido ni de sus políticas.'],
+    ['15. Responsabilidad', 'Nos comprometemos a entregar un trabajo de calidad y en los términos acordados. Los resultados comerciales dependen de muchos factores, por lo que no podemos garantizar ventas o resultados específicos.'],
+    ['16. Cambios y contacto', 'Podemos actualizar estos términos; la versión vigente es la publicada en esta página. Si tienes dudas, escríbenos por WhatsApp al +52 844 293 4546 o en nuestras redes sociales.']
+  ];
+  renderVals() { return { sections: this.S.map(([h, p]) => ({ h, p })) }; }
+}
+</script>
+</body>
+</html>
