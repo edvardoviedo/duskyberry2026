@@ -9,7 +9,7 @@
   cover: { bg: '#0CC0DF', fg: '#000000', word: 'Grabando…', sub: 'sin morir en el intento', alt: 'Portada tipográfica: Grabando, sin morir en el intento' },
   related: ['por-que-la-fotografia-nunca-pasara-de-moda', 'descansar-tambien-es-ser-productivo'],
   products: ['sony-zv-e10k', 'macbook-neo-indigo', 'ipad-azul'],
-  cta: { text: '¿Quieres que tu contenido se vea como el de una marca, no como el de alguien más?', label: 'Conoce el servicio de video', href: 'Servicio-video.dc.html' },
+  cta: { text: '¿Quieres que tu contenido se vea como el de una marca, no como el de alguien más?', label: 'Cotiza tu proyecto de video', href: 'Cotizacion.dc.html?servicio=video' },
   body: [
     ['p', 'Todos conocemos a alguien que abrió una cuenta “para ser influencer”, publicó todos los días durante tres semanas, no vio resultados y la abandonó. Quizá ese alguien fuiste tú.'],
     ['p', 'La mala noticia: no hay atajos. La buena: el camino es mucho más claro de lo que parece cuando dejas de copiar a los demás y empiezas a construir algo propio.'],
